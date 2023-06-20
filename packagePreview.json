@@ -1,32 +1,38 @@
 [
     {
         "name": "Geek Coffee",
-        "description": "Ganhe um café e um filme.",
-        "date": "21-12-2021",
+        "description": "Win a coffee and a movie.",
+        "date": "00-00-0000",
         "href": "https://victoralvesfarias.github.io/Geek-Coffee/"
     },
     {
         "name": "Terminal Jornal",
-        "description": "Terminal inspirado nos jogos Fallout.",
-        "date": "21-12-2021",
+        "description": "Terminal inspired by Fallout games.",
+        "date": "00-00-0000",
         "href": "https://victoralvesfarias.github.io/Terminal-Jornal/"
     },
     {
         "name": "Introduction To React",
-        "description": "Apenas um site para aprender React.",
-        "date": "21-12-2021",
+        "description": "Just a site to learn React.",
+        "date": "00-00-0000",
         "href": "https://victoralvesfarias.github.io/Introduction-To-React/"
     },
     {
         "name": "Introduction To Js",
-        "description": "Apenas um site para aprender JavaScript.",
-        "date": "21-12-2021",
+        "description": "Just a site to learn JavaScript.",
+        "date": "00-00-0000",
         "href": "https://victoralvesfarias.github.io/Introduction-To-Js/"
     },
     {
         "name": "Kingdom Of Creation",
-        "description": "O mistério da criação...",
-        "date": "21-12-2021",
+        "description": "Game created only in HTML, CSS and JS.",
+        "date": "00-00-0000",
         "href": "https://github.com/VictorAlvesFarias/Kingdom-Of-Creation"
+    },
+        {
+        "name": "Victor Alves Portfolio",
+        "description": "See my projects and technologies i use.",
+        "date": "00-00-0000",
+        "href": "https://victor-portfolio-delta.vercel.app"
     }
 ]
