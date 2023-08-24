@@ -29,10 +29,16 @@
         "date": "00-00-0000",
         "href": "https://github.com/VictorAlvesFarias/Kingdom-Of-Creation"
     },
-        {
+    {
         "name": "Victor Alves Portfolio",
         "description": "See my projects and technologies i use.",
         "date": "00-00-0000",
         "href": "https://victor-portfolio-delta.vercel.app"
+    },
+    {
+        "name": "Studios Connect",
+        "description": "The best software house of word.",
+        "date": "00-00-0000",
+        "href": "https://github.com/VictorAlvesFarias/Studios-Connect"
     }
 ]
