@@ -1,0 +1,60 @@
+{
+    "en-us": {
+        "header": {
+            "title": [
+                "HELLO, MY NAME IS",
+                "VICTOR",
+                "I AM A FULLSTACK",
+                "DEVELOPER"
+            ]
+        },
+        "aboutMe": {
+            "title": "ABOUT ME",
+            "paragraph": [
+                "I am passionate about software development and architecture. I am extremely detail-oriented to write clean and efficient code. I believe in the importance of code review, as well as sharing and discussing different solutions with my team. My main goal is to learn, teach, and collaborate together to build amazing projects that provide an exceptional experience to people, working with what I love."
+            ]
+        },
+        "technologies": {
+            "title": "TECHNOLOGIES"
+        },
+        "latestProjects": {
+            "title": "Latest Projects",
+            "seeMore": "See More Latest Projects"
+        },
+        "siteInfo": {
+            "title": "This site was made using:"
+        },
+        "footer": {
+            "title": "Developed by Victor"
+        }
+    },
+    "pt-br": {
+        "header": {
+            "title": [
+                "OLA, MEU NOME É",
+                "VICTOR",
+                "EU SOU UM DESENVOLVEDOR",
+                "FULLSTACK"
+            ]
+        },
+        "aboutMe": {
+            "title": "SOBRE MIM",
+            "paragraph": [
+                "Sou apaixonado por desenvolvimento e arquitetura de software. Sou extremamente atento para conseguir escrever código limpo e eficiente. Acredito na importância de revisar código, bem como compartilhar e discutir diferentes soluções com minha equipe. Meu principal objetivo é aprender, ensinar e colaborar juntos para construir projetos incríveis que proporcionem uma experiência excepcional às pessoas, trabalhando com o que amo."
+            ]
+        },
+        "technologies": {
+            "title": "TECNOLOGIAS"
+        },
+        "latestProjects": {
+            "title": "ULTIMOS PROJETOS",
+            "seeMore": "Ver todos"
+        },
+        "siteInfo": {
+            "title": "Esse site foi feito usando:"
+        },
+        "footer": {
+            "title": "Desenvolvido por Victor"
+        }
+    }
+}

@@ -7,6 +7,9 @@ import Lightbox from "yet-another-react-lightbox";
 import Counter from "yet-another-react-lightbox/plugins/counter";
 import "yet-another-react-lightbox/styles.css";
 import { eyeIcon } from '../../public';
+import { Languages } from '../../i18n.config';
+import useClientInter from '@/utils/hooks/useClientInter';
+import Texts from '../../internationalization/project-card.json';
 
 interface ProjectCardProps {
   repo:{
@@ -19,6 +22,10 @@ interface ProjectCardProps {
 
 function ProjectCard(props:ProjectCardProps) {
 	const [toggler, setToggler] = useState(false);
+
+  const language: Languages = useClientInter()
+
+  const texts =  Texts[language]
 
   return (
       <div className="flex gap-3 items-center  lex-1 p-4 rounded-sm bg-zinc-200 shadow-lg ">
@@ -42,7 +49,7 @@ function ProjectCard(props:ProjectCardProps) {
               <Image className='cursor-pointer ml-3' width={25} height={25}  onClick={()=>setToggler(!toggler)} src={eyeIcon} alt={''}></Image>
             </div>
             <p>{props.repo.description}</p>
-            <a target='_blank' href={props.repo.href} className='font-semibold'>Ir para o site...</a>
+            <a target='_blank' href={props.repo.href} className='font-semibold'>{texts.seeMore}</a>
         </div>
       </div>
   )

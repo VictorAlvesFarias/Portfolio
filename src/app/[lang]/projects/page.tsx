@@ -1,8 +1,11 @@
 import React, { Suspense } from 'react'
-import { ProjectCard,Section } from '@/components'
-import { cornerDownLeftIcon } from '../../../public'
-import Link from 'next/link'
+import { cornerDownLeftIcon } from '../../../../public'
 import Image from 'next/image'
+import Section from '@/components/Section';
+import ProjectCard from '@/components/ProjectCard';
+import Anch from '@/components/Anch';
+import Texts from '../../../../internationalization/projects.json'
+import useServerInter from '@/utils/hooks/useServerInter';
 
 async function Projects() {
   interface Repositorie {
@@ -18,16 +21,20 @@ async function Projects() {
 
   const repos:Repositorie[] = await data.json()
 
+  const language: "pt-br" | "en-us"  = useServerInter()
+
+  const texts:any = Texts[language]
+  
   return (
     <Suspense fallback="testoing">
       <div className="  flex flex-col items-center justify-center w-full">
         <div className="text-zinc-900 text-sm flex w-full flex-col justify-center items-center">
           <header className="lg:px-0 px-5 flex flex-col justify-center items-center  w-full h-96 bg-gradient-to-t to-zinc-400 to-100% via-zinc-300 via-40% from-transparent">
             <div  className="mt-20 flex max-w-128 w-11/12">
-              <Link className='rounded-full border-2 mr-3 p-1 border-zinc-800 flex justify-between' href={'/'}>
+              <Anch className='rounded-full border-2 mr-3 p-1 border-zinc-800 flex justify-between' href={'/'}>
                 <Image className='w-7' width={28} height={28}  src={cornerDownLeftIcon} alt={'Return Icon'}></Image>
-              </Link>
-              <h2 className="w-full flex items-center  text-lg lg:text-2xl">PROJECTS</h2>   
+              </Anch>
+              <h2 className="w-full flex items-center  text-lg lg:text-2xl">{texts.jobs.title}</h2>   
             </div>
           </header>
           <Section>

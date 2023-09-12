@@ -13,6 +13,7 @@ export {default as reactJsIcon} from './svg/react-js-icon.svg'
 export {default as typescriptIcon} from './svg/typescript-icon.svg'
 export {default as eyeIcon} from './svg/eye-icon.svg'
 export {default as logoImg} from './img/logo-img.png'
+export {default as languagesIcon} from './svg/languages-icon.svg'
 
 
 

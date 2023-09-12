@@ -1,0 +1,14 @@
+{   
+    "pt-br":{
+        "aboutMe": "Sobre Mim",
+        "technologies": "Tecnologias",
+        "jobs": "Trabalhos",
+        "language": "Idioma"
+    },
+    "en-us":{
+        "aboutMe": "About me",
+        "technologies": "Technologies",
+        "jobs": "Jobs",
+        "language": "Language"
+    }
+}
