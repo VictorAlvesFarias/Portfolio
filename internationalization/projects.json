@@ -1,0 +1,12 @@
+{   
+    "pt-br":{
+        "jobs": {
+            "title":"Meus Trabalhos"
+        }
+    },
+    "en-us":{
+        "jobs": {
+            "title":"My Jobs"
+        }
+    }
+}
