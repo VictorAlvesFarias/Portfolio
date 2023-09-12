@@ -7,14 +7,14 @@ export function middleware(request: NextRequest) {
 
   requestHeaders.set('x-url', request.nextUrl.pathname.split("/")[1]);
 
-  return [
+  return (
     NextResponse.next({
       request: {
         // Apply new request headers
         headers: requestHeaders,
       }
     })
-  ]
+  )
 }
  
 export const config = {
