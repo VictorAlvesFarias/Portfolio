@@ -17,6 +17,8 @@ function Navbar() {
 
   const [mobileMenuOpen,setMobileMenuOpen] = useState(false)
 
+  const [mobileMenuLanguage, setMobileMenuLanguage] = useState(false)
+
   useEffect(() => {
     const handleScroll:any = () => {
       if (window.scrollY > 50 && !navStyle) {
@@ -57,21 +59,21 @@ function Navbar() {
             </div>
             <div className="hidden lg:flex lg:gap-x-12 font-light">
               <div>
-                <Anch href="/#about-me" className="text-md leading-6 text-zinc">{texts.aboutMe}</Anch>
+                <Anch href="/#about-me" className="pl-3 text-md leading-6 text-zinc">{texts.aboutMe}</Anch>
                 <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
               </div>
               <div>
-                <Anch href="/projects" className="text-md leading-6 text-zinc">{texts.jobs}</Anch>
+                <Anch href="/projects" className="pl-3 text-md leading-6 text-zinc">{texts.jobs}</Anch>
                 <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
               </div>
               <div>
-                <Anch href="/#technologies" className="text-md leading-6 text-zinc">{texts.technologies}</Anch>
+                <Anch href="/#technologies" className="pl-3 text-md leading-6 text-zinc">{texts.technologies}</Anch>
                 <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
               </div>
               <DropdownMenu.Root >
                 <DropdownMenu.Trigger asChild>
                   <div>
-                    <button className="flex justify-center items-center text-md leading-6 text-zinc " aria-label="Customise options">
+                    <button className="flex justify-center items-center pl-3 text-md leading-6 text-zinc " aria-label="Customise options">
                       {texts.language}
                     </button>
                     <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
@@ -80,10 +82,10 @@ function Navbar() {
                 <DropdownMenu.Portal>
                   <DropdownMenu.Content className="DropdownMenuContent mt-6 p-5 lg:bg-zinc-50 lg:shadow-lg flex flex-col gap-3 " sideOffset={5}>
                     <DropdownMenu.Item>
-                      <Locale href="pt-br" className="text-md leading-6">Português</Locale>
+                      <Locale href="pt-br" className="pl-3 text-md leading-6">Português</Locale>
                     </DropdownMenu.Item>
                     <DropdownMenu.Item className="DropdownMenuItem">
-                      <Locale href="en-us" className="text-md leading-6">English</Locale>
+                      <Locale href="en-us" className="pl-3 text-md leading-6">English</Locale>
                     </DropdownMenu.Item>
                   </DropdownMenu.Content>
                 </DropdownMenu.Portal>
@@ -93,8 +95,9 @@ function Navbar() {
             </div>
           </nav>
         </Container>
-        <div onClick={()=>setMobileMenuOpen(false)} className={' text-black fixed justify-end w-full flex top-0 h-screen transition-all '+(mobileMenuOpen?"left-0":"left-full")/* +(navStyle ? ' pt-16' :' pt-20 ') */}>
-          <div className="lg:hidden w-full h-full flex flex-col items-end" role="dialog" aria-modal="true">
+        <div className={' text-black fixed justify-end w-full flex top-0 h-screen transition-all '+(mobileMenuOpen?"left-0":"left-full")/* +(navStyle ? ' pt-16' :' pt-20 ') */}>
+          <div className="lg:hidden w-full h-full flex" role="dialog" aria-modal="true">
+            <div onClick={()=>setMobileMenuOpen(false)} className='flex-1'></div>
             <div className=" inset-y-0 right-0 h-full w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
               <div className="flex items-center justify-between ">
                 <a href="#" className="-m-1.5 p-1.5">
@@ -111,16 +114,26 @@ function Navbar() {
                 <div className="-my-6 divide-y divide-gray-500/10">
                   <div className="space-y-2 py-6">
                     <div>
-                      <Anch href="/#about-me" className="text-md leading-6 text-zinc">{texts.aboutMe}</Anch>
+                      <Anch href="/#about-me" className="pl-3 text-md leading-6 text-zinc">{texts.aboutMe}</Anch>
                       <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
                     </div>
                     <div>
-                      <Anch href="/projects" className="text-md leading-6 text-zinc">{texts.jobs}</Anch>
+                      <Anch href="/projects" className="pl-3 text-md leading-6 text-zinc">{texts.jobs}</Anch>
                       <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
                     </div>
                     <div>
-                      <Anch href="/#technologies" className="text-md leading-6 text-zinc">{texts.technologies}</Anch>
+                      <Anch href="/#technologies" className="pl-3 text-md leading-6 text-zinc">{texts.technologies}</Anch>
                       <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
+                    </div>
+                    <div onClick={()=>setMobileMenuLanguage(!mobileMenuLanguage)} >
+                      <span className="pl-3 text-md leading-6 text-zinc cursor-pointer">{texts.language} </span>
+                      <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
+                      <div className={' pl-10 mt-2 transition-all overflow-hidden'+ (mobileMenuLanguage?" h-20":" h-0")}>
+                        <Locale href="pt-br" className="pl-3 text-md leading-6">Português</Locale>
+                        <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-pink-400 to-pink-300 '></div>
+                        <Locale href="en-us" className="pl-3 text-md leading-6">English</Locale>
+                        <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-pink-400 to-pink-300 '></div>
+                      </div>
                     </div>
                   </div>
                 </div>
