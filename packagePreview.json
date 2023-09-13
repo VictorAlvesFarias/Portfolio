@@ -43,14 +43,13 @@
         }
     ],
     "technologies":[
+        {"name":"C SHARP"},
+        {"name":"REACT & REACT NATIVE"},
+        {"name":"TYPE SCRIPT"},
         {"name":"NEXT"},
-        {"name":"REACT"},
-        {"name":"REACT NATIVE"},
-        {"name":"TAILWIND"},
         {"name":"NODE"},
-        {"name":"C#"},
         {"name":"JAVA SCRIPT"},
-        {"name":"TYPE SCRIPT"}
+        {"name":"TAILWIND"}
     ]
 
 }
