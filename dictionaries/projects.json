@@ -1,12 +1,12 @@
 {   
     "pt-br":{
         "jobs": {
-            "title":"Meus Trabalhos"
+            "title":"TRABALHOS"
         }
     },
     "en-us":{
         "jobs": {
-            "title":"My Jobs"
+            "title":"JOBS"
         }
     }
 }
