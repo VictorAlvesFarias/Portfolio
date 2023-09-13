@@ -15,11 +15,12 @@
             ]
         },
         "technologies": {
-            "title": "TECHNOLOGIES"
+            "title": "TECHNOLOGIES",
+            "seeMore": "See all technologies..."
         },
         "latestProjects": {
             "title": "Latest Projects",
-            "seeMore": "See More Latest Projects"
+            "seeMore": "See More Latest Projects..."
         },
         "siteInfo": {
             "title": "This site was made using:"
@@ -44,7 +45,8 @@
             ]
         },
         "technologies": {
-            "title": "TECNOLOGIAS"
+            "title": "TECNOLOGIAS",
+            "seeMore": "Ver todas tecnologias..."
         },
         "latestProjects": {
             "title": "ULTIMOS PROJETOS",

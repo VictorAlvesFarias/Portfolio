@@ -4,17 +4,16 @@ import Image from 'next/image'
 import Section from '@/components/Section';
 import ProjectCard from '@/components/ProjectCard';
 import Anch from '@/components/Anch';
-import Dictionaries from '../../../../dictionaries/projects.json'
+import Dictionaries from '../../../../dictionaries/technologies.json'
 import useServerInter from '@/utils/hooks/useServerInter';
+import TecnologieCard from '@/components/TecnologieCard';
 import Gradientline from '@/components/Gradientline';
 
-async function Projects() {
+async function Technologies() {
+  
   interface Repositorie {
-    projects:[{
+    technologies:[{
       name: string;
-      href: string;
-      description: string;
-      date: string;
     }]
   }
 
@@ -38,15 +37,16 @@ async function Projects() {
                 <Image className='w-7' width={28} height={28}  src={cornerDownLeftIcon} alt={'Return Icon'}></Image>
               </Anch>
               <div>
-                <h2 className="w-full flex items-center  text-lg lg:text-2xl">{texts.jobs.title}</h2>     
-                <Gradientline/>            
-              </div>  
+                <h2 className="w-full flex items-center  text-lg lg:text-2xl">{texts.technologies.title}</h2>  
+                <Gradientline/>
+              </div> 
             </div>
+        
           </header>
           <Section>
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-3 w-full">
-                {repos.projects.map((item, index)=>
-                  <ProjectCard key={index} repo={item}></ProjectCard>
+                {repos.technologies.map((item,index)=>
+                  <TecnologieCard key={index} name={item.name}></TecnologieCard>
                 )}
             </div>
           </Section>
@@ -57,4 +57,4 @@ async function Projects() {
   )
 }
 
-export default Projects
+export default Technologies 

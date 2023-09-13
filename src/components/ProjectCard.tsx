@@ -9,7 +9,7 @@ import "yet-another-react-lightbox/styles.css";
 import { eyeIcon } from '../../public';
 import { Languages } from '../../i18n.config';
 import useClientInter from '@/utils/hooks/useClientInter';
-import Texts from '../../internationalization/project-card.json';
+import Dictionaries from '../../dictionaries/project-card.json';
 
 interface ProjectCardProps {
   repo:{
@@ -25,10 +25,10 @@ function ProjectCard(props:ProjectCardProps) {
 
   const language: Languages = useClientInter()
 
-  const texts =  Texts[language]
+  const texts =  Dictionaries[language]
 
   return (
-      <div className="flex gap-3 items-center  lex-1 p-4 rounded-sm bg-zinc-200 shadow-lg ">
+      <div className="flex gap-3 items-center  lex-1 p-4 py-10 rounded-sm bg-zinc-200 shadow-lg ">
         <Lightbox
           open={toggler}
           close={() => setToggler(false)}

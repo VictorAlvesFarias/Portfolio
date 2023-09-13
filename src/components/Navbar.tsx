@@ -10,6 +10,7 @@ import Dictionaries from '../../dictionaries/navbar.json'
 import useClientInter from '@/utils/hooks/useClientInter';
 import Anch from './Anch';
 import type { Languages } from '../../i18n.config';
+import Gradientline from './Gradientline';
 
 function Navbar() {
 
@@ -60,15 +61,15 @@ function Navbar() {
             <div className="hidden lg:flex lg:gap-x-12 font-light">
               <div>
                 <Anch href="/#about-me" className="text-md leading-6 text-zinc">{texts.aboutMe}</Anch>
-                <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
+                <Gradientline/>
               </div>
               <div>
                 <Anch href="/projects" className="text-md leading-6 text-zinc">{texts.jobs}</Anch>
-                <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
+                <Gradientline/>
               </div>
               <div>
-                <Anch href="/#technologies" className="text-md leading-6 text-zinc">{texts.technologies}</Anch>
-                <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
+                <Anch href="/technologies" className="text-md leading-6 text-zinc">{texts.technologies}</Anch>
+                <Gradientline/>
               </div>
               <DropdownMenu.Root >
                 <DropdownMenu.Trigger asChild>
@@ -76,7 +77,7 @@ function Navbar() {
                     <button className="flex justify-center items-center text-md leading-6 text-zinc " aria-label="Customise options">
                       {texts.language}
                     </button>
-                    <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
+                    <Gradientline/>
                   </div>
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Portal>
@@ -115,19 +116,19 @@ function Navbar() {
                   <div className="space-y-2 py-6">
                     <div>
                       <Anch href="/#about-me" className="pl-3 text-md leading-6 text-zinc">{texts.aboutMe}</Anch>
-                      <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
+                      <Gradientline/>
                     </div>
                     <div>
                       <Anch href="/projects" className="pl-3 text-md leading-6 text-zinc">{texts.jobs}</Anch>
-                      <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
+                      <Gradientline/>
                     </div>
                     <div>
-                      <Anch href="/#technologies" className="pl-3 text-md leading-6 text-zinc">{texts.technologies}</Anch>
-                      <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
+                      <Anch href="/technologies" className="pl-3 text-md leading-6 text-zinc">{texts.technologies}</Anch>
+                      <Gradientline/>
                     </div>
                     <div onClick={()=>setMobileMenuLanguage(!mobileMenuLanguage)} >
                       <span className="pl-3 text-md leading-6 text-zinc cursor-pointer">{texts.language} </span>
-                      <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
+                      <Gradientline/>
                       <div className={' pl-10 mt-2 transition-all overflow-hidden'+ (mobileMenuLanguage?" h-20":" h-0")}>
                         <Locale href="pt-br" className="pl-3 text-md leading-6">Português</Locale>
                         <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-pink-400 to-pink-300 '></div>

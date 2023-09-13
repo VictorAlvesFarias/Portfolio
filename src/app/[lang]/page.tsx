@@ -21,18 +21,28 @@ import Dictionaries from '../../../dictionaries/home.json'
 import { Languages } from '../../../i18n.config';
  
 export default async function Home() {
+
+  
   interface Repositorie {
-    name: string;
-    href: string;
-    description: string;
-    date: string;
+    projects: [{
+      name: string;
+      href: string;
+      description: string;
+      date: string;
+    }],
+    technologies: [ {
+      name:string
+    },
+    {
+      name:string
+    }]
   }
 
   const data:any =  await fetch("https://raw.githubusercontent.com/VictorAlvesFarias/Portfolio/database/packagePreview.json",{
     cache:"no-store"
   }) 
 
-  const repos:Repositorie[] =  await data.json()
+  const repos:Repositorie =  await data.json()
 
   const language: Languages =  useServerInter()
 
@@ -85,22 +95,22 @@ export default async function Home() {
           <div className="items-center w-full justify-center gap-y-1 flex flex-col">
               <h1 className=" pb-12 w-full text-lg lg:text-2xl">{texts.technologies.title}</h1>
               <div className=" flex gap-1 w-full ">
-                <TecnologieCard icon={nextJsIcon}></TecnologieCard>
-                <TecnologieCard icon={reactJsIcon}></TecnologieCard>
-              </div>
+                <TecnologieCard name={repos.technologies[0].name} ></TecnologieCard>
+                <TecnologieCard name={repos.technologies[1].name}></TecnologieCard>
+              </div>            
               <div className="grid grid-cols-2 xl:grid-cols-4 gap-1 w-full">
-                <TecnologieCard icon={nodeJsIcon}></TecnologieCard>
-                <TecnologieCard icon={talwindIcon}></TecnologieCard>
-                <TecnologieCard icon={jsIcon}></TecnologieCard>
-                <TecnologieCard icon={typescriptIcon}></TecnologieCard>
+              {repos.technologies.slice(2, 6).map((item,index)=>
+                  <TecnologieCard key={index} name={item.name}></TecnologieCard>
+                )}
               </div>  
+              <Anch href='/technologies' className='font-semibold max-w-128 pt-6 w-full' >{texts.technologies.seeMore}</Anch>     
           </div>
         </Section>
         <Section>
           <div className=" items-center justify-center flex flex-col">
             <h1 className="text-lg w-full lg:text-2xl pb-12 ">{texts.latestProjects.title}</h1>
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-3 w-full">
-                {repos.map((item:Repositorie,index:number)=>
+                {repos.projects.slice(0, 6).reverse().map((item,index)=>
                   <ProjectCard key={index} repo={item}></ProjectCard>
                 )}
             </div>   
