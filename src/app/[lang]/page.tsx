@@ -19,6 +19,7 @@ import Anch from '@/components/Anch';
 import Navbar from '@/components/Navbar'
 import Dictionaries from '../../../dictionaries/home.json'
 import { Languages } from '../../../i18n.config';
+import Gradientline from '@/components/Gradientline';
  
 export default async function Home() {
 
@@ -92,8 +93,11 @@ export default async function Home() {
           </div>
         </Section>
         <Section>
-          <div className="items-center w-full justify-center gap-y-1 flex flex-col">
-              <h1 className=" pb-12 w-full text-lg lg:text-2xl">{texts.technologies.title}</h1>
+          <div className="items-start w-full justify-center gap-y-1 flex flex-col">
+            <div className=" pb-12 text-lg lg:text-2xl">
+              <h1 >{texts.technologies.title}</h1> 
+              <Gradientline/>             
+            </div>
               <div className=" flex gap-1 w-full ">
                 <TecnologieCard name={repos.technologies[0].name} ></TecnologieCard>
                 <TecnologieCard name={repos.technologies[1].name}></TecnologieCard>
@@ -107,8 +111,11 @@ export default async function Home() {
           </div>
         </Section>
         <Section>
-          <div className=" items-center justify-center flex flex-col">
-            <h1 className="text-lg w-full lg:text-2xl pb-12 ">{texts.latestProjects.title}</h1>
+          <div className=" items-start justify-center flex flex-col">
+            <div className="text-lg lg:text-2xl pb-12 ">
+              <h1 >{texts.latestProjects.title}</h1> 
+              <Gradientline/>             
+            </div>
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-3 w-full">
                 {repos.projects.slice(0, 6).reverse().map((item,index)=>
                   <ProjectCard key={index} repo={item}></ProjectCard>
