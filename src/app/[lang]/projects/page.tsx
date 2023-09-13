@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Section from '@/components/Section';
 import ProjectCard from '@/components/ProjectCard';
 import Anch from '@/components/Anch';
-import Texts from '../../../../internationalization/projects.json'
+import Dictionaries from '../../../../dictionaries/projects.json'
 import useServerInter from '@/utils/hooks/useServerInter';
 
 async function Projects() {
@@ -23,7 +23,7 @@ async function Projects() {
 
   const language: "pt-br" | "en-us"  = useServerInter()
 
-  const texts:any = Texts[language]
+  const texts:any = Dictionaries[language]
   
   return (
     <Suspense fallback="testoing">
