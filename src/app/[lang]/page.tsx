@@ -17,7 +17,7 @@ import {
 import useServerInter from '../../utils/hooks/useServerInter';
 import Anch from '@/components/Anch';
 import Navbar from '@/components/Navbar'
-import Texts from '../../../internationalization/home.json'
+import Dictionaries from '../../../dictionaries/home.json'
 import { Languages } from '../../../i18n.config';
  
 export default async function Home() {
@@ -36,7 +36,7 @@ export default async function Home() {
 
   const language: Languages =  useServerInter()
 
-  const texts =  Texts[language]
+  const texts =  Dictionaries[language]
 
   return (
     <div  className="  flex flex-col items-center justify-center w-full">

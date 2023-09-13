@@ -6,7 +6,7 @@ import Container from './Container';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import Link from 'next/link';
 import Locale from '@/components/Locale';
-import Texts from '../../internationalization/navbar.json'
+import Dictionaries from '../../dictionaries/navbar.json'
 import useClientInter from '@/utils/hooks/useClientInter';
 import Anch from './Anch';
 import type { Languages } from '../../i18n.config';
@@ -37,7 +37,7 @@ function Navbar() {
 
   const language: Languages = useClientInter()
 
-  const texts =  Texts[language]
+  const texts =  Dictionaries[language]
 
   return (
     <React.Fragment>
@@ -59,33 +59,33 @@ function Navbar() {
             </div>
             <div className="hidden lg:flex lg:gap-x-12 font-light">
               <div>
-                <Anch href="/#about-me" className="pl-3 text-md leading-6 text-zinc">{texts.aboutMe}</Anch>
+                <Anch href="/#about-me" className="text-md leading-6 text-zinc">{texts.aboutMe}</Anch>
                 <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
               </div>
               <div>
-                <Anch href="/projects" className="pl-3 text-md leading-6 text-zinc">{texts.jobs}</Anch>
+                <Anch href="/projects" className="text-md leading-6 text-zinc">{texts.jobs}</Anch>
                 <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
               </div>
               <div>
-                <Anch href="/#technologies" className="pl-3 text-md leading-6 text-zinc">{texts.technologies}</Anch>
+                <Anch href="/#technologies" className="text-md leading-6 text-zinc">{texts.technologies}</Anch>
                 <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
               </div>
               <DropdownMenu.Root >
                 <DropdownMenu.Trigger asChild>
                   <div>
-                    <button className="flex justify-center items-center pl-3 text-md leading-6 text-zinc " aria-label="Customise options">
+                    <button className="flex justify-center items-center text-md leading-6 text-zinc " aria-label="Customise options">
                       {texts.language}
                     </button>
                     <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400 to-fuchsia-700 '></div>
                   </div>
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Portal>
-                  <DropdownMenu.Content className="DropdownMenuContent mt-6 p-5 lg:bg-zinc-50 lg:shadow-lg flex flex-col gap-3 " sideOffset={5}>
-                    <DropdownMenu.Item>
-                      <Locale href="pt-br" className="pl-3 text-md leading-6">Português</Locale>
+                  <DropdownMenu.Content className="DropdownMenuContent mt-6 w-32  lg:bg-zinc-50 lg:shadow-lg flex flex-col " sideOffset={5}>
+                    <DropdownMenu.Item className='hover:bg-zinc-300 p-3  focus-visible:outline-none'>
+                      <Locale href="pt-br" className="text-md leading-6">Português</Locale>
                     </DropdownMenu.Item>
-                    <DropdownMenu.Item className="DropdownMenuItem">
-                      <Locale href="en-us" className="pl-3 text-md leading-6">English</Locale>
+                    <DropdownMenu.Item className='hover:bg-zinc-300 p-3 focus-visible:outline-none'>
+                      <Locale href="en-us" className="text-mdleading-6">English</Locale>
                     </DropdownMenu.Item>
                   </DropdownMenu.Content>
                 </DropdownMenu.Portal>
@@ -103,9 +103,9 @@ function Navbar() {
                 <a href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">Your Company</span>
                 </a>
-                <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700">
+                <button onClick={()=>setMobileMenuOpen(false)}  type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700">
                   <span className="sr-only">Close menu</span>
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                  <svg  className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
