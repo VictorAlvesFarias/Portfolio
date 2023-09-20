@@ -6,10 +6,10 @@ import Container from './Container';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import Link from 'next/link';
 import Locale from '@/components/Locale';
-import Dictionaries from '../../dictionaries/navbar.json'
+import Dictionaries from '../dictionaries/navbar.json'
 import useClientInter from '@/utils/hooks/useClientInter';
 import Anch from './Anch';
-import type { Languages } from '../../i18n.config';
+import type { Languages } from '../i18n.config';
 import Gradientline from './Gradientline';
 
 function Navbar() {

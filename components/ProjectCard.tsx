@@ -6,10 +6,10 @@ import { useState } from 'react';
 import Lightbox from "yet-another-react-lightbox";
 import Counter from "yet-another-react-lightbox/plugins/counter";
 import "yet-another-react-lightbox/styles.css";
-import { eyeIcon } from '../../public';
-import { Languages } from '../../i18n.config';
+import { eyeIcon } from '../public';
+import { Languages } from '../i18n.config';
 import useClientInter from '@/utils/hooks/useClientInter';
-import Dictionaries from '../../dictionaries/project-card.json';
+import Dictionaries from '../dictionaries/project-card.json';
 
 interface ProjectCardProps {
   repo:{
