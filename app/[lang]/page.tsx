@@ -13,12 +13,12 @@ import {
   talwindIcon, 
   jsIcon, 
   typescriptIcon
-} from "../../../public/index"
+} from "../../public/index"
 import useServerInter from '../../utils/hooks/useServerInter';
 import Anch from '@/components/Anch';
 import Navbar from '@/components/Navbar'
-import Dictionaries from '../../../dictionaries/home.json'
-import { Languages } from '../../../i18n.config';
+import Dictionaries from '../../dictionaries/home.json'
+import { Languages } from '../../i18n.config';
 import Gradientline from '@/components/Gradientline';
  
 export default async function Home() {

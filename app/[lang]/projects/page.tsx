@@ -1,19 +1,20 @@
 import React, { Suspense } from 'react'
-import { cornerDownLeftIcon } from '../../../../public'
+import { cornerDownLeftIcon } from '../../../public'
 import Image from 'next/image'
 import Section from '@/components/Section';
 import ProjectCard from '@/components/ProjectCard';
 import Anch from '@/components/Anch';
-import Dictionaries from '../../../../dictionaries/technologies.json'
+import Dictionaries from '../../../dictionaries/projects.json'
 import useServerInter from '@/utils/hooks/useServerInter';
-import TecnologieCard from '@/components/TecnologieCard';
 import Gradientline from '@/components/Gradientline';
 
-async function Technologies() {
-  
+async function Projects() {
   interface Repositorie {
-    technologies:[{
+    projects:[{
       name: string;
+      href: string;
+      description: string;
+      date: string;
     }]
   }
 
@@ -37,16 +38,15 @@ async function Technologies() {
                 <Image className='w-7' width={28} height={28}  src={cornerDownLeftIcon} alt={'Return Icon'}></Image>
               </Anch>
               <div>
-                <h2 className="w-full flex items-center  text-lg lg:text-2xl">{texts.technologies.title}</h2>  
-                <Gradientline/>
-              </div> 
+                <h2 className="w-full flex items-center  text-lg lg:text-2xl">{texts.jobs.title}</h2>     
+                <Gradientline/>            
+              </div>  
             </div>
-        
           </header>
           <Section>
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-3 w-full">
-                {repos.technologies.map((item,index)=>
-                  <TecnologieCard key={index} name={item.name}></TecnologieCard>
+                {repos.projects.map((item, index)=>
+                  <ProjectCard key={index} repo={item}></ProjectCard>
                 )}
             </div>
           </Section>
@@ -57,4 +57,4 @@ async function Technologies() {
   )
 }
 
-export default Technologies 
+export default Projects
