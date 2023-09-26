@@ -50,7 +50,7 @@ export default async function Home() {
   const texts =  Dictionaries[language]
 
   return (
-    <div  className="  flex flex-col items-center justify-center w-full">
+    <div  className="flex flex-col items-center justify-center w-full">
       <div className="text-zinc-900 text-sm flex w-full flex-col justify-center items-center">
         <header className="lg:px-0 px-5 flex justify-center items-center  w-full h-screen bg-gradient-to-t to-zinc-400 to-100% via-zinc-200 via-40% from-transparent">
           <div className=" flex-row flex justify-center max-w-128 w-11/12">
