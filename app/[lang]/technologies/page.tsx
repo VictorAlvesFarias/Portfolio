@@ -8,20 +8,11 @@ import useServerInter from '@/utils/hooks/useServerInter';
 import TecnologieCard from '@/components/TecnologieCard';
 import Gradientline from '@/components/Gradientline';
 import Return from '@/components/Return';
+import { GetProfileDatas } from '@/services/api';
 
 async function Technologies() {
   
-  interface Repositorie {
-    technologies:[{
-      name: string;
-    }]
-  }
-
-  const data:any =  await fetch("https://raw.githubusercontent.com/VictorAlvesFarias/Portfolio/database/packagePreview.json",{
-    cache:"no-store"
-  })
-
-  const repos:Repositorie = await data.json()
+  const repos:any =  await GetProfileDatas()
 
   const language: "pt-br" | "en-us"  = useServerInter()
 
@@ -45,8 +36,8 @@ async function Technologies() {
           </header>
           <Section>
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-3 w-full">
-                {repos.technologies.map((item,index)=>
-                  <TecnologieCard key={index} name={item.name}></TecnologieCard>
+                {repos.technologies.map((item:any,index:any)=>
+                  <TecnologieCard key={index} data={item}></TecnologieCard>
                 )}
             </div>
           </Section>

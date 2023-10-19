@@ -8,10 +8,7 @@ import {
   githubPictureIcon, 
   linkedinPictureIcon, 
   nextJsIcon, 
-  reactJsIcon, 
-  nodeJsIcon, 
   talwindIcon, 
-  jsIcon, 
   typescriptIcon
 } from "../../public/index"
 import useServerInter from '../../utils/hooks/useServerInter';
@@ -20,29 +17,11 @@ import Navbar from '@/components/Navbar'
 import Dictionaries from '../../dictionaries/home.json'
 import { Languages } from '../../i18n.config';
 import Gradientline from '@/components/Gradientline';
+import { GetProfileDatas } from '@/services/api';
  
 export default async function Home() {
 
-  interface Repositorie {
-    projects: [{
-      name: string;
-      href: string;
-      description: string;
-      date: string;
-    }],
-    technologies: [ {
-      name:string
-    },
-    {
-      name:string
-    }]
-  }
-
-  const data:any =  await fetch("https://raw.githubusercontent.com/VictorAlvesFarias/Portfolio/database/packagePreview.json",{
-    cache:"no-store"
-  }) 
-
-  const repos:Repositorie =  await data.json()
+  const repos:any =  await GetProfileDatas()
 
   const language: Languages =  useServerInter()
 
@@ -98,12 +77,12 @@ export default async function Home() {
               <Gradientline/>             
             </div>
             <div className=" flex gap-1 w-full ">
-              <TecnologieCard name={repos.technologies[0].name} ></TecnologieCard>
-              <TecnologieCard name={repos.technologies[1].name}></TecnologieCard>
+              <TecnologieCard data={repos.technologies[1]} ></TecnologieCard>
+              <TecnologieCard data={repos.technologies[0]}></TecnologieCard>
             </div>            
             <div className="grid grid-cols-2 xl:grid-cols-4 gap-1 w-full">
-              {repos.technologies.slice(2, 6).map((item,index)=>
-                <TecnologieCard key={index} name={item.name}></TecnologieCard>
+              {repos.technologies.slice(2, 6).map((item:any,index:any)=>
+                <TecnologieCard key={index} data={item}></TecnologieCard>
               )}
             </div>  
             <Anch href='/technologies' className='font-semibold max-w-128 pt-6 w-full dark:text-white' >{texts.technologies.seeMore}</Anch>     
@@ -116,9 +95,9 @@ export default async function Home() {
               <Gradientline/>             
             </div>
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-3 w-full">
-              {repos.projects.slice(0, 6).reverse().map((item,index)=>
-                <ProjectCard key={index} repo={item}></ProjectCard>
-              )}
+              {repos.projects.slice(0, 6).reverse().map((item:any,index:any)=>
+                <ProjectCard key={index} data={item}></ProjectCard>
+              )} 
             </div>   
             <Anch href='/projects' className='font-semibold max-w-128 pt-6 w-full dark:text-white' >{texts.latestProjects.seeMore}</Anch>     
           </div>

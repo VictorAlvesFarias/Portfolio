@@ -1,6 +1,4 @@
-import { Repositorie } from "@/app/[lang]/projects/page"
-
-export async function GET(request: Request) {
+export async function GetProfileDatas() {
 
     interface Repositorie {
         projects: [{
@@ -45,5 +43,5 @@ export async function GET(request: Request) {
       technologies
     }
 
-    return Response.json( response )
+    return  response 
   }
