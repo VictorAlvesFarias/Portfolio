@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react'
-import Image from 'next/image'
 import Section from '@/components/Section';
 import ProjectCard from '@/components/ProjectCard';
 import Anch from '@/components/Anch';
@@ -7,29 +6,17 @@ import Dictionaries from '../../../dictionaries/projects.json'
 import useServerInter from '@/utils/hooks/useServerInter';
 import Gradientline from '@/components/Gradientline';
 import Return from '@/components/Return';
+import { GetProfileDatas } from '@/services/api';
 
 async function Projects() {
-  interface Repositorie {
-    projects:[{
-      name: string;
-      href: string;
-      description: string;
-      date: string;
-    }]
-  }
 
-  const data:any =  await fetch("https://raw.githubusercontent.com/VictorAlvesFarias/Portfolio/database/packagePreview.json",{
-    cache:"no-store"
-  })
-
-  const repos:Repositorie = await data.json()
+  const repos:any =  await GetProfileDatas()
 
   const language: "pt-br" | "en-us"  = useServerInter()
 
   const texts:any = Dictionaries[language]
   
   return (
-    <Suspense fallback="testoing">
       <div className="  flex flex-col items-center justify-center w-full">
         <div className="text-zinc-900 text-sm flex w-full flex-col justify-center items-center">
           <header className=" text-black dark:text-white lg:px-0 px-5 flex justify-center items-center h-[70vh] w-full bg-gradient-to-t to-zinc-400 to-100% via-zinc-200 via-40% from-transparent dark:to-black dark:via-zinc-800 ">
@@ -45,14 +32,13 @@ async function Projects() {
           </header>
           <Section>
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-3 w-full">
-                {repos.projects.map((item, index)=>
-                  <ProjectCard key={index} repo={item}></ProjectCard>
+                {repos.projects.map((item:any, index:any)=>
+                  <ProjectCard key={index} data={item}></ProjectCard>
                 )}
             </div>
           </Section>
         </div>
       </div> 
-    </Suspense>
 
   )
 }
