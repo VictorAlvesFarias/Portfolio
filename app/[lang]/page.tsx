@@ -18,6 +18,8 @@ import Dictionaries from '../../dictionaries/home.json'
 import { Languages } from '../../i18n.config';
 import Gradientline from '@/components/Gradientline';
 import { GetProfileDatas } from '@/services/api';
+import { useEffect } from 'react';
+import LanguagesMetrics from '@/containers/LanguagesMetrics';
  
 export default async function Home() {
 
@@ -88,6 +90,7 @@ export default async function Home() {
             <Anch href='/technologies' className='font-semibold max-w-128 pt-6 w-full dark:text-white' >{texts.technologies.seeMore}</Anch>     
           </div>
         </Section>
+        <LanguagesMetrics/>
         <Section>
           <div className=" items-start justify-center flex flex-col">
             <div className="text-lg lg:text-2xl pb-12 dark:text-white">

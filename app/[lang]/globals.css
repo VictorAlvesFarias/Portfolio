@@ -5,6 +5,13 @@
 @import '@radix-ui/colors/mauve.css';
 @import '@radix-ui/colors/violet.css';
 
+.historic-pie-grafic {
+  height: 80%;
+  justify-content: space-between;
+  display: flex;
+}
+
+
 body * {
     scroll-behavior: smooth;
     margin:0;
@@ -100,4 +107,8 @@ body::-webkit-scrollbar-track {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+#ok {
+  color:white;
 }
