@@ -99,7 +99,7 @@ function LanguagesMetrics() {
                                         display: false,
                                     },  
                                 }
-                            }}
+                            }} 
                         />
                     </div>
                 </div>
