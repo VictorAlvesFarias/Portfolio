@@ -1,5 +1,5 @@
 
-import {defaultLocale,languageIsValid} from '../../../i18n.config.ts'
+import {defaultLocale,languageIsValid} from '../../i18n.config'
 import { usePathname } from "next/navigation";
 
 function useClientInter():any {

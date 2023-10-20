@@ -1,5 +1,5 @@
 import { headers } from "next/dist/client/components/headers";
-import {defaultLocale, languageIsValid} from '../../../i18n.config.ts'
+import {defaultLocale, languageIsValid} from '../../i18n.config'
 
 function useServerInter():any {
     const headersList =  headers();
