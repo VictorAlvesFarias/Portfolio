@@ -80,12 +80,12 @@ function LanguagesMetrics() {
                             {texts.paragraph}
                         </p>
                     </div> 
-                    <div className=' flex md:w-1/2 w-full flex-col gap-3  justify-center items-center'>
+                    <div className=' flex md:w-1/3 w-full flex-col gap-3  justify-center items-center'>
                         <div className='flex gap-3 flex-wrap justify-center'>
                             {
                                 data.labels.map((item:any,index:any)=>
                                     <div style={{backgroundColor:data.datasets[0].backgroundColor[index]}} className=' text-black flex p-1 px-3 gap-3 items-center ' key={index}>
-                                        {item}
+                                        {item}: {Math.floor(data.datasets[0].data[index])}%
                                     </div>
                                 )
                             }
