@@ -101,6 +101,8 @@ export async function GET() {
 
         const uri:any = process.env.MONGODB_URI
 
+        const uriLocal = "mongodb://localhost:27017"
+
         await mongoose.connect(uri);
         
         const item =  await Profile.findOne({}).sort({ date: -1 })
