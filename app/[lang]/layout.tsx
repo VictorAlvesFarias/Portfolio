@@ -2,14 +2,10 @@ import { githubIcon } from '../../public'
 import Image from 'next/image'
 import './globals.css'
 import Navbar from '@/components/Navbar'
-import { ThemeProvider } from 'next-themes'
-
 export const metadata = {
   title: 'Victor Alves',
   description: 'Portifólio',
 }
-
-
 
 export default function RootLayout({children}:{children: React.ReactNode}) {
 
