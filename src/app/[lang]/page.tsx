@@ -9,7 +9,7 @@ import {
 } from "../../../public/index"
 import useServerInter from '../../utils/hooks/use-server-inter';
 import Dictionaries from '../../dictionaries/home.json'
-import { GetProfileDatas } from '@/services/api';
+import { GetProfileDatas } from '@/services/profile-service';
 import { Languages } from '../../../i18n.config';
 import Section from '@/components/section';
 import Gradientline from '@/components/gradient-line';

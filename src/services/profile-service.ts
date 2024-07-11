@@ -1,7 +1,9 @@
+import { RepositorieEntity } from "@/interfaces/entities/repository-entity"
+
 export async function GetProfileDatas() {
     const data:any =  await fetch("https://raw.githubusercontent.com/VictorAlvesFarias/Portfolio/database/packagePreview.json",{ cache: 'no-store' }) 
     
-    const repos:Repositorie = await data.json()
+    const repos:RepositorieEntity = await data.json()
 
     const technologies = repos.technologies.map(item=>{
       return {
