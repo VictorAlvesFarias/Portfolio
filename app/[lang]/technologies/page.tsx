@@ -1,7 +1,5 @@
 import React, { Suspense } from 'react'
-import Image from 'next/image'
 import Section from '@/components/Section';
-import ProjectCard from '@/components/ProjectCard';
 import Anch from '@/components/Anch';
 import Dictionaries from '../../../dictionaries/technologies.json'
 import useServerInter from '@/utils/hooks/useServerInter';
