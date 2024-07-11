@@ -1,19 +1,16 @@
 import React, { Suspense } from 'react'
-import Section from '@/components/Section';
-import Anch from '@/components/Anch';
+import Section from '@/components/section';
 import Dictionaries from '../../../dictionaries/technologies.json'
-import useServerInter from '@/utils/hooks/useServerInter';
-import TecnologieCard from '@/components/TecnologieCard';
-import Gradientline from '@/components/Gradientline';
-import Return from '@/components/Return';
+import useServerInter from '@/utils/hooks/use-server-inter';
 import { GetProfileDatas } from '@/services/api';
+import Anch from '@/components/anch';
+import Return from '@/components/return';
+import Gradientline from '@/components/gradient-line';
+import TecnologieCard from '@/components/tecnologie-card';
 
-async function Technologies() {
-  
+async function Technologies() {  
   const repos:any =  await GetProfileDatas()
-
   const language: "pt-br" | "en-us"  = useServerInter()
-
   const texts:any = Dictionaries[language]
   
   return (

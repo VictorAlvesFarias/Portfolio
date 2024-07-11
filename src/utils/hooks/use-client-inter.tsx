@@ -1,6 +1,7 @@
 
-import {defaultLocale,languageIsValid} from '../../i18n.config'
+
 import { usePathname } from "next/navigation";
+import { defaultLocale, languageIsValid } from "../../../i18n.config";
 
 function useClientInter():any {
     const pathname = usePathname()

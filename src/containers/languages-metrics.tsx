@@ -1,13 +1,13 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import Section from '@/components/Section';
-import Gradientline from '@/components/Gradientline';
-import { Languages } from '@/i18n.config';
-import useClientInter from '@/utils/hooks/useClientInter';
+import Gradientline from '@/components/gradient-line';
+import { Languages } from '../../i18n.config';
+import useClientInter from '@/utils/hooks/use-client-inter';
 import Dictionaries from '../dictionaries/analytics.json';
 import { Doughnut, Pie } from 'react-chartjs-2';
 import {Chart, ArcElement} from 'chart.js'
+import Section from '@/components/section';
 
 Chart.register(ArcElement);
 
