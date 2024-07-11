@@ -59,7 +59,7 @@ function LanguagesMetrics() {
     }
 
      useEffect(() => {
-        fetch("/api/profile")
+        fetch("https://victoralves-portfolio-backend.vercel.app/api/profile")
         .then(response=> response.json())
         .then((item:any)=>{
             setData(convertData(item.languages))
