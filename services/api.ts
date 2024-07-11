@@ -15,7 +15,7 @@ export async function GetProfileDatas() {
         }]
     }
     
-    const data:any =  await fetch("https://raw.githubusercontent.com/VictorAlvesFarias/Portfolio/database/packagePreview.json") 
+    const data:any =  await fetch("https://raw.githubusercontent.com/VictorAlvesFarias/Portfolio/database/packagePreview.json",{ cache: 'no-store' }) 
     
     const repos:Repositorie = await data.json()
 
