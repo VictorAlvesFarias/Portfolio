@@ -2,15 +2,15 @@
 
 import { useEffect, useState } from 'react'
 import React from 'react';
-import Container from './Container';
+import Container from './container';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
-import Locale from '@/components/Locale';
 import Dictionaries from '../dictionaries/navbar.json'
-import useClientInter from '@/utils/hooks/useClientInter';
-import Anch from './Anch';
-import type { Languages } from '../i18n.config';
-import Gradientline from './Gradientline';
-import ToggleTheme from './ToggleTheme';
+import Anch from './anch';
+import Gradientline from './gradient-line';
+import ToggleTheme from './toggle-theme';
+import useClientInter from '@/utils/hooks/use-client-inter';
+import { Languages } from '../../i18n.config';
+import Locale from './locale';
 
 function Navbar() {
 

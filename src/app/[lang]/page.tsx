@@ -1,6 +1,4 @@
 import Image from 'next/image'
-import TecnologieCard from '@/components/TecnologieCard';
-import Section from '@/components/Section';
 import {
   profileImg,
   githubPictureIcon,
@@ -8,15 +6,16 @@ import {
   nextJsIcon,
   talwindIcon,
   typescriptIcon
-} from "../../public/index"
-import useServerInter from '../../utils/hooks/useServerInter';
-import Anch from '@/components/Anch';
+} from "../../../public/index"
+import useServerInter from '../../utils/hooks/use-server-inter';
 import Dictionaries from '../../dictionaries/home.json'
-import { Languages } from '../../i18n.config';
-import Gradientline from '@/components/Gradientline';
 import { GetProfileDatas } from '@/services/api';
-import LanguagesMetrics from '@/containers/LanguagesMetrics';
-import CircleArrowDown from '@/components/CircleArrowDown'
+import { Languages } from '../../../i18n.config';
+import Section from '@/components/section';
+import Gradientline from '@/components/gradient-line';
+import TecnologieCard from '@/components/tecnologie-card';
+import Anch from '@/components/anch';
+import LanguagesMetrics from '@/containers/languages-metrics';
 
 export default async function Home() {
   const repos: any = await GetProfileDatas()

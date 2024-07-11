@@ -1,20 +1,4 @@
 export async function GetProfileDatas() {
-
-    interface Repositorie {
-        projects: [{
-          name: string;
-          href: string;
-          description: string;
-          date: string;
-        }],
-        technologies: [ {
-          name:string
-        },
-        {
-          name:string
-        }]
-    }
-    
     const data:any =  await fetch("https://raw.githubusercontent.com/VictorAlvesFarias/Portfolio/database/packagePreview.json",{ cache: 'no-store' }) 
     
     const repos:Repositorie = await data.json()
