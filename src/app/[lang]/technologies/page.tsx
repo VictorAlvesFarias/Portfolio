@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import Section from '@/components/section';
 import Dictionaries from '../../../dictionaries/technologies.json'
 import useServerInter from '@/utils/hooks/use-server-inter';
-import { GetProfileDatas } from '@/services/api';
+import { GetProfileDatas } from '@/services/profile-service';
 import Anch from '@/components/anch';
 import Return from '@/components/return';
 import Gradientline from '@/components/gradient-line';
