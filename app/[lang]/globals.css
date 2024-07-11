@@ -109,6 +109,30 @@ body::-webkit-scrollbar-track {
   }
 }
 
-#ok {
-  color:white;
+.glow {
+  position: absolute;
+  top: calc(50%);
+  left: calc(50%);
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: #000000;
+  box-shadow:
+    0 0 60px 30px #fff,
+    0 0 200px 120px rgba(247, 50, 165, 0.199) ,
+    0 0 280px 180px rgba(135, 102, 255, 0.247);
+}
+
+.dark .glow {
+  position: absolute;
+  top: calc(50%);
+  left: calc(50%);
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: #000000;
+  box-shadow:
+    0 0 60px 30px #fff,
+    0 0 200px 120px rgba(237, 58, 222, 0.541) ,
+    0 0 280px 180px rgba(135, 102, 255, 0.5);
 }

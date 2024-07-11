@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+'use client'
+
+import React, {useEffect, useState } from 'react';
 
 
 const ToggleTheme = () => {
@@ -36,12 +38,15 @@ const ToggleTheme = () => {
     </svg>
   );
 
-
-
   function handleToggle() {
     setIsDarkmode(!isDarkmode)
     isDarkmode ? document.documentElement.classList.remove('dark') : document.documentElement.classList.add('dark')
   } 
+
+  useEffect(() => {
+  setIsDarkmode(document.documentElement.classList.value == "dark")
+  }, [])
+  
   
   return (
     <button

@@ -2,13 +2,16 @@
     "pt-br":{
         "aboutMe": "Sobre Mim",
         "technologies": "Tecnologias",
-        "jobs": "Trabalhos",
-        "language": "Idioma"
+        "links": "Links",
+        "jobs": "Trabalhos pessoais",
+        "language": "Idioma",
+        "xp": "Experiencia"
     },
     "en-us":{
         "aboutMe": "About me",
         "technologies": "Technologies",
-        "jobs": "Jobs",
+        "links": "Links",
+        "jobs": "Personal projects",
         "language": "Language"
     }
 }

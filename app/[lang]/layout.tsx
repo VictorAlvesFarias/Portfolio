@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({children}:{children: React.ReactNode}) {
 
   return (
-      <html>
+      <html className='dark'>
         <body className='min-h-screen bg-white dark:bg-zinc-900 scroll-smooth'>
           <Navbar></Navbar>
           {children}
