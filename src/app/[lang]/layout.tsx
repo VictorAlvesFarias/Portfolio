@@ -1,4 +1,4 @@
-import { githubIcon } from '../../../public/'
+import { githubIcon } from '../../../public/public-modules'
 import Image from 'next/image'
 import './globals.css'
 import Navbar from '@/components/navbar'
