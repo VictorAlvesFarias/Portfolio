@@ -6,7 +6,7 @@ import {
   nextJsIcon,
   talwindIcon,
   typescriptIcon
-} from "../../../public/index"
+} from "../../../public/public-modules"
 import useServerInter from '../../utils/hooks/use-server-inter';
 import Dictionaries from '../../dictionaries/home.json'
 import { GetProfileDatas } from '@/services/profile-service';
