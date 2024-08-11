@@ -26,7 +26,6 @@ export default async function Home() {
     <div className="flex flex-col items-center justify-center w-full">
       <div className="text-zinc-900 text-sm flex w-full flex-col justify-center items-center">
         <header className=" text-black dark:text-white lg:px-0 px-5 flex justify-center items-center w-full h-screen bg-gradient-to-t to-zinc-400 to-100% via-zinc-200 via-40% from-transparent dark:to-black dark:via-zinc-800 relative">
-          <div className='glow'></div>
           <div className=" flex-row flex justify-center max-w-128 w-11/12">
             <div className=" flex flex-col z-10 justify-center items-center">
               <h2 className="w-full sm:min-w-min flex justify-start sm:justify-center text-lg lg:text-2xl ">
