@@ -13,24 +13,56 @@ import { paddingPropDefs } from '@radix-ui/themes';
 Chart.register(ArcElement);
 
 function LanguagesMetrics() {
-
     const language: Languages = useClientInter()
-
     const texts = Dictionaries[language]
 
+    function generatePastelColorsArray(quantity: number) {
+        const violetPastelColorsArray = [];
+        const minHue = 257;
+        const maxHue = 348;
+        const minSaturation = 70;
+        const maxSaturation = 83;
+        const minLightness = 60;
+        const maxLightness = 72;
+
+        for (let i = 0; i < quantity; i++) {
+            const hue = Math.floor(Math.random() * (maxHue - minHue + 1)) + minHue; // Matiz entre 257 e 348
+            const saturation = Math.floor(Math.random() * (maxSaturation - minSaturation + 1)) + minSaturation; // Saturação entre 70 e 83
+            const lightness = Math.floor(Math.random() * (maxLightness - minLightness + 1)) + minLightness; // Luminosidade entre 60 e 72
+
+            const pastelVioletColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+            violetPastelColorsArray.push(pastelVioletColor);
+        }
+
+        return violetPastelColorsArray;
+    }
+    function reduceOpacityByHalf(colorList: any[]) {
+        return colorList.map(color => {
+            const hslMatch = color.match(/hsl\((\d+),\s*(\d+)%?,\s*(\d+)%?\)/);
+
+            if (hslMatch) {
+                const [, hue, saturation, lightness] = hslMatch;
+                return `hsla(${hue}, ${saturation}%, ${lightness}%, 0.5)`;
+            }
+
+            // Caso não seja HSL válido, retornar a cor original.
+            return color;
+        });
+    }
     function convertData(inputData: any): any {
-
         const labels = inputData.map((item: any) => item.name);
-
         const data = inputData.map((item: any) => item.percentage);
+        const colors = generatePastelColorsArray(inputData.length)
 
         const outputData = {
             labels: labels,
             datasets: [
                 {
                     data: data,
-                    backgroundColor: generatePastelColorsArray(inputData.length),
-                    borderWidth: 0
+                    backgroundColor: reduceOpacityByHalf(colors),
+                    backgroundOpacity: "",
+                    borderWidth: 2,
+                    borderColor: colors
                 },
             ],
         };
@@ -43,28 +75,6 @@ function LanguagesMetrics() {
         datasets: [
         ],
     })
-
-    function generatePastelColorsArray(quantity: number) {
-        const violetPastelColorsArray = [];
-
-        const minHue = 257; // Hue mínimo (violeta)
-        const maxHue = 348; // Hue máximo (rosa claro)
-        const minSaturation = 70; // Saturação mínima (baseada em #7c3aed)
-        const maxSaturation = 83; // Saturação máxima (baseada em #fb7185)
-        const minLightness = 60; // Luminosidade mínima (baseada em #7c3aed)
-        const maxLightness = 72; // Luminosidade máxima (baseada em #fb7185)
-        
-        for (let i = 0; i < quantity; i++) {
-            const hue = Math.floor(Math.random() * (maxHue - minHue + 1)) + minHue; // Matiz entre 257 e 348
-            const saturation = Math.floor(Math.random() * (maxSaturation - minSaturation + 1)) + minSaturation; // Saturação entre 70 e 83
-            const lightness = Math.floor(Math.random() * (maxLightness - minLightness + 1)) + minLightness; // Luminosidade entre 60 e 72
-        
-            const pastelVioletColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-            violetPastelColorsArray.push(pastelVioletColor);
-        }
-        
-        return violetPastelColorsArray;
-    }
 
     useEffect(() => {
         fetch("https://victoralves-portfolio-backend.vercel.app/api/profile")
@@ -92,7 +102,7 @@ function LanguagesMetrics() {
                         <div className='flex gap-3 flex-wrap justify-center'>
                             {
                                 data.labels.map((item: any, index: any) =>
-                                    <div style={{ backgroundColor: data.datasets[0].backgroundColor[index] }} className=' text-zinc-800 font-semibold flex p-1 px-3 gap-3 items-center rounded' key={index}>
+                                    <div style={{ backgroundColor: data.datasets[0].backgroundColor[index] }} className=' dark:text-zinc-50 font-semibold flex p-1 px-3 gap-3 items-center rounded' key={index}>
                                         {item}: {Math.floor(data.datasets[0].data[index])}%
                                     </div>
                                 )
