@@ -8,6 +8,7 @@ import Dictionaries from '../dictionaries/analytics.json';
 import { Doughnut, Pie } from 'react-chartjs-2';
 import { Chart, ArcElement } from 'chart.js'
 import Section from '@/components/section';
+import { paddingPropDefs } from '@radix-ui/themes';
 
 Chart.register(ArcElement);
 
@@ -29,7 +30,7 @@ function LanguagesMetrics() {
                 {
                     data: data,
                     backgroundColor: generatePastelColorsArray(inputData.length),
-                    borderWidth: 0,
+                    borderWidth: 0
                 },
             ],
         };
@@ -46,15 +47,22 @@ function LanguagesMetrics() {
     function generatePastelColorsArray(quantity: number) {
         const violetPastelColorsArray = [];
 
+        const minHue = 257; // Hue mínimo (violeta)
+        const maxHue = 348; // Hue máximo (rosa claro)
+        const minSaturation = 70; // Saturação mínima (baseada em #7c3aed)
+        const maxSaturation = 83; // Saturação máxima (baseada em #fb7185)
+        const minLightness = 60; // Luminosidade mínima (baseada em #7c3aed)
+        const maxLightness = 72; // Luminosidade máxima (baseada em #fb7185)
+        
         for (let i = 0; i < quantity; i++) {
-            const hue = Math.floor(Math.random() * 41) + 260; // Matiz restrita a 260-300 (tons de violeta)
-            const saturation = Math.floor(Math.random() * 31) + 70; // Saturação em torno de 70-100
-            const lightness = Math.floor(Math.random() * 31) + 60; // Luminosidade em torno de 60-90
-    
+            const hue = Math.floor(Math.random() * (maxHue - minHue + 1)) + minHue; // Matiz entre 257 e 348
+            const saturation = Math.floor(Math.random() * (maxSaturation - minSaturation + 1)) + minSaturation; // Saturação entre 70 e 83
+            const lightness = Math.floor(Math.random() * (maxLightness - minLightness + 1)) + minLightness; // Luminosidade entre 60 e 72
+        
             const pastelVioletColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
             violetPastelColorsArray.push(pastelVioletColor);
         }
-    
+        
         return violetPastelColorsArray;
     }
 
@@ -74,7 +82,7 @@ function LanguagesMetrics() {
                     <h1 >{texts.title}</h1>
                     <Gradientline />
                 </div>
-                <div className='flex flex-col p-6 items-center justify-center dark:text-white  gap-6 md:flex-row bg-zinc-100 shadow-sm dark:bg-zinc-800 shadow-sm  rounded-sm'>
+                <div className='flex flex-col p-6 items-center justify-center dark:text-white  gap-6 md:flex-row bg-zinc-100  dark:bg-zinc-800 shadow-sm  rounded-sm'>
                     <div className=" md:w-1/2 items-start w-full  gap-y-1 flex flex-col">
                         <p className='w-full font-semibold'>
                             {texts.paragraph}
