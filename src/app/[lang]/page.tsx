@@ -23,9 +23,9 @@ export default async function Home() {
   const texts = Dictionaries[language]
 
   return (
-    <div className="flex flex-col items-center justify-center w-full">
-      <div className="text-zinc-900 text-sm flex w-full flex-col justify-center items-center">
-        <header className=" text-black dark:text-white lg:px-0 px-5 flex justify-center items-center w-full h-screen bg-gradient-to-t to-zinc-400 to-100% via-zinc-200 via-40% from-transparent dark:to-black dark:via-zinc-800 relative">
+    <div className="text-black dark:text-white flex flex-col items-center justify-center w-full">
+      <div className="text-sm flex w-full flex-col justify-center items-center">
+        <header className=" lg:px-0 px-5 flex justify-center items-center w-full h-screen bg-gradient-to-t to-zinc-400 to-100% via-zinc-200 via-40% from-transparent dark:to-black dark:via-zinc-800 relative">
           <div className=" flex-row flex justify-center max-w-128 w-11/12">
             <div className=" flex flex-col z-10 justify-center items-center">
               <h2 className="w-full sm:min-w-min flex justify-start sm:justify-center text-lg lg:text-2xl ">
@@ -58,6 +58,30 @@ export default async function Home() {
             </div>
           </div>
         </Section>
+        <div id='technologies' className='hidden'></div>
+        <Section>
+          <div className="items-start w-full justify-center gap-y-1 flex flex-col">
+            <div className=" pb-12 text-lg lg:text-2xl dark:text-white">
+              <h1 >{texts.technologies.title}</h1>
+              <Gradientline />
+            </div>
+            <div className=" flex gap-1 w-full ">
+              <TecnologieCard data={repos.technologies[1]} ></TecnologieCard>
+              <TecnologieCard data={repos.technologies[0]}></TecnologieCard>
+            </div>
+            <div className="grid grid-cols-2 xl:grid-cols-4 gap-1 w-full">
+              {repos.technologies.slice(2).map((item: any, index: any) =>
+                <div key={index} className='w-full  items-center  font-semibold rounded shadow-sm bg-zinc-100 dark:bg-zinc-800  p-6 flex gap-3'>
+                  <Image width={30} height={30} src={item.src} alt={''} />
+                  <p>{item.name}</p>
+                </div>
+              )}
+            </div>
+
+          </div>
+        </Section>
+        <div id='analitics' className='hidden'></div>
+        <LanguagesMetrics />
         <div id='links' className='hidden'></div>
         <Section>
           <div className="items-start w-full justify-center gap-y-1 flex flex-col">
@@ -77,27 +101,6 @@ export default async function Home() {
             </div>
           </div>
         </Section>
-        <div id='technologies' className='hidden'></div>
-        <Section>
-          <div className="items-start w-full justify-center gap-y-1 flex flex-col">
-            <div className=" pb-12 text-lg lg:text-2xl dark:text-white">
-              <h1 >{texts.technologies.title}</h1>
-              <Gradientline />
-            </div>
-            <div className=" flex gap-1 w-full ">
-              <TecnologieCard data={repos.technologies[1]} ></TecnologieCard>
-              <TecnologieCard data={repos.technologies[0]}></TecnologieCard>
-            </div>
-            <div className="grid grid-cols-2 xl:grid-cols-4 gap-1 w-full">
-              {repos.technologies.slice(2, 6).map((item: any, index: any) =>
-                <TecnologieCard key={index} data={item}></TecnologieCard>
-              )}
-            </div>
-            <Anch href='/technologies' className='font-semibold max-w-128 pt-6 w-full dark:text-white' >{texts.technologies.seeMore}</Anch>
-          </div>
-        </Section>
-        <div id='analitics' className='hidden'></div>
-        <LanguagesMetrics />
         <Section>
           <div className='flex items-center py-3 flex-col'>
             <p className='font-bold mb-6 text-zinc-600  text-base dark:text-white' >{texts.siteInfo.title}</p>

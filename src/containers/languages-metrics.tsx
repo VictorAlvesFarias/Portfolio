@@ -6,23 +6,23 @@ import { Languages } from '../../i18n.config';
 import useClientInter from '@/utils/hooks/use-client-inter';
 import Dictionaries from '../dictionaries/analytics.json';
 import { Doughnut, Pie } from 'react-chartjs-2';
-import {Chart, ArcElement} from 'chart.js'
+import { Chart, ArcElement } from 'chart.js'
 import Section from '@/components/section';
 
 Chart.register(ArcElement);
 
 function LanguagesMetrics() {
-    
+
     const language: Languages = useClientInter()
 
-    const texts =  Dictionaries[language]
- 
-    function convertData(inputData:any):any {
+    const texts = Dictionaries[language]
 
-        const labels = inputData.map((item:any) => item.name);
+    function convertData(inputData: any): any {
 
-        const data = inputData.map((item:any) => item.percentage);
-    
+        const labels = inputData.map((item: any) => item.name);
+
+        const data = inputData.map((item: any) => item.percentage);
+
         const outputData = {
             labels: labels,
             datasets: [
@@ -33,73 +33,73 @@ function LanguagesMetrics() {
                 },
             ],
         };
-    
+
         return outputData;
     }
-     
-    const [data,setData]:any = useState({
+
+    const [data, setData]: any = useState({
         labels: [],
         datasets: [
         ],
     })
 
-    function generatePastelColorsArray(quantity:number) {
-        const pastelColorsArray = [];
-      
+    function generatePastelColorsArray(quantity: number) {
+        const violetPastelColorsArray = [];
+
         for (let i = 0; i < quantity; i++) {
-          const hue = Math.floor(Math.random() * 360); // Matiz aleatória (0-359)
-          const saturation = Math.floor(Math.random() * 31) + 70; // Saturação em torno de 70-100
-          const lightness = Math.floor(Math.random() * 31) + 60; // Luminosidade em torno de 60-90
-      
-          const pastelColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-          pastelColorsArray.push(pastelColor);
+            const hue = Math.floor(Math.random() * 41) + 260; // Matiz restrita a 260-300 (tons de violeta)
+            const saturation = Math.floor(Math.random() * 31) + 70; // Saturação em torno de 70-100
+            const lightness = Math.floor(Math.random() * 31) + 60; // Luminosidade em torno de 60-90
+    
+            const pastelVioletColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+            violetPastelColorsArray.push(pastelVioletColor);
         }
-      
-        return pastelColorsArray;
+    
+        return violetPastelColorsArray;
     }
 
-     useEffect(() => {
+    useEffect(() => {
         fetch("https://victoralves-portfolio-backend.vercel.app/api/profile")
-        .then(response=> response.json())
-        .then((item:any)=>{
-            setData(convertData(item.languages))
-        })
+            .then(response => response.json())
+            .then((item: any) => {
+                setData(convertData(item.languages))
+            })
 
-    }, []) 
-    
+    }, [])
+
     return (
         <Section>
             <div className='flex flex-col'>
-                    <div className=" pb-12 w-fit text-lg lg:text-2xl dark:text-white">
-                        <h1 >{texts.title}</h1> 
-                        <Gradientline/>             
-                    </div>
-                <div className='flex flex-col p-6 items-center justify-center dark:text-white  gap-6 md:flex-row bg-zinc-100 dark:bg-zinc-800 shadow-sm  rounded-sm'>
+                <div className=" pb-12 w-fit text-lg lg:text-2xl dark:text-white">
+                    <h1 >{texts.title}</h1>
+                    <Gradientline />
+                </div>
+                <div className='flex flex-col p-6 items-center justify-center dark:text-white  gap-6 md:flex-row bg-zinc-100 shadow-sm dark:bg-zinc-800 shadow-sm  rounded-sm'>
                     <div className=" md:w-1/2 items-start w-full  gap-y-1 flex flex-col">
-                        <p className='w-full'>
+                        <p className='w-full font-semibold'>
                             {texts.paragraph}
                         </p>
-                    </div> 
+                    </div>
                     <div className=' flex md:w-1/3 w-full flex-col gap-3  justify-center items-center'>
                         <div className='flex gap-3 flex-wrap justify-center'>
                             {
-                                data.labels.map((item:any,index:any)=>
-                                    <div style={{backgroundColor:data.datasets[0].backgroundColor[index]}} className=' text-black flex p-1 px-3 gap-3 items-center ' key={index}>
+                                data.labels.map((item: any, index: any) =>
+                                    <div style={{ backgroundColor: data.datasets[0].backgroundColor[index] }} className=' text-zinc-800 font-semibold flex p-1 px-3 gap-3 items-center rounded' key={index}>
                                         {item}: {Math.floor(data.datasets[0].data[index])}%
                                     </div>
                                 )
                             }
                         </div>
-                        <Doughnut 
+                        <Doughnut
                             className='p-6'
                             data={data}
                             options={{
                                 plugins: {
                                     legend: {
                                         display: false,
-                                    },  
+                                    },
                                 }
-                            }} 
+                            }}
                         />
                     </div>
                 </div>

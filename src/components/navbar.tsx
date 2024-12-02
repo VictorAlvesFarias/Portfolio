@@ -44,7 +44,7 @@ function Navbar() {
     <React.Fragment>
       <header className={`fixed w-screen transition flex top-0 left-0 justify-center items-center z-30 dark:text-zinc-50 ${navStyle ? ' bg-zinc-50 shadow-lg  dark:bg-zinc-900 ' : ' '}`}>
         <Container>
-          <nav className="flex items-center justify-between lg:justify-center h-20 gap-x-12 font-light">
+          <nav className="flex items-center  font-semibold justify-between lg:justify-center h-20 gap-x-12 font-light">
             <div className="hidden lg:block">
               <Anch href="/#about-me" className={`text-md leading-6`}>{texts.aboutMe}</Anch>
               <Gradientline />
@@ -67,11 +67,11 @@ function Navbar() {
                 </div>
               </DropdownMenu.Trigger>
               <DropdownMenu.Portal>
-                <DropdownMenu.Content className={`DropdownMenuContent mt-6 w-32 dark:bg-zinc-900 dark:tezt bg-zinc-50 lg:shadow-lg flex flex-col`} sideOffset={5}>
-                  <DropdownMenu.Item className={`hover:bg-zinc-300 p-3 focus-visible:outline-none ${navStyle ? 'text-md leading-6' : 'dark:text-gray-300'}`}>
+                <DropdownMenu.Content className={`DropdownMenuContent mt-6 w-32 dark:bg-zinc-900  bg-zinc-50 lg:shadow-lg flex flex-col`} sideOffset={5}>
+                  <DropdownMenu.Item className={`hover:bg-zinc-300 p-3 focus-visible:outline-none dark:text-white ${navStyle ? 'text-md leading-6' : ''}`}>
                     <Locale href="pt-br">Português</Locale>
                   </DropdownMenu.Item>
-                  <DropdownMenu.Item className={`hover:bg-zinc-300 p-3 focus-visible:outline-none ${navStyle ? 'text-md leading-6' : 'dark:text-gray-300'}`}>
+                  <DropdownMenu.Item className={`hover:bg-zinc-300 p-3 focus-visible:outline-none  dark:text-white ${navStyle ? 'text-md leading-6' : ''}`}>
                     <Locale href="en-us">English</Locale>
                   </DropdownMenu.Item>
                 </DropdownMenu.Content>
@@ -90,15 +90,15 @@ function Navbar() {
 
           </nav>
         </Container>
-        <div className={`text-black fixed justify-end w-full flex top-0 h-screen transition-all ${mobileMenuOpen ? "left-0" : "left-full"}`}>
+        <div className={`fixed justify-end w-full flex top-0 h-screen transition-all ${mobileMenuOpen ? "left-0" : "left-full"}`}>
           <div className="lg:hidden w-full h-full flex" role="dialog" aria-modal="true">
             <div onClick={() => setMobileMenuOpen(false)} className='flex-1'></div>
-            <div className=" inset-y-0 right-0 h-full w-full overflow-y-auto bg-white dark:bg-zinc-900 dark:text-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div className=" inset-y-0 right-0 h-full w-full overflow-y-auto bg-white dark:bg-zinc-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
               <div className="flex items-center justify-between ">
                 <a href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">Your Company</span>
                 </a>
-                <button onClick={() => setMobileMenuOpen(false)} type="button" className="-m-2.5 rounded-md p-2.5  text-gray-700">
+                <button onClick={() => setMobileMenuOpen(false)} type="button" className="-m-2.5 rounded-md p-2.5  ">
                   <span className="sr-only">Close menu</span>
                   <svg className="h-6 w-6 dark:stroke-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
