@@ -73,7 +73,7 @@ export default async function Home() {
               {repos.technologies.slice(2, - ((repos.technologies.length - 2) % 4)).map((item: any, index: any) =>
                 <div key={index} className='w-full  items-center  font-semibold rounded shadow-sm bg-zinc-100 dark:bg-zinc-800  p-6 flex gap-3'>
                   <Image width={30} height={30} src={item.src} alt={''} />
-                  <p>{item.name}</p>
+                  <p className='font-semibold md:text-1xl text-center overflow-hidden text-ellipsis whitespace-nowrap'>{item.name}</p>
                 </div>
               )}
             </div>
@@ -100,7 +100,6 @@ export default async function Home() {
             </div>
           </div>
         </Section>
-
       </div>
     </div>
   )
