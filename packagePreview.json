@@ -1,15 +1,16 @@
 {  
     "technologies":[
-        {"name":".NET"},        
-        {"name":"REACT AND REACT NATIVE"},
-        {"name":"SQL SERVER"},
-        {"name":"REDIS"},
-        {"name":"RABBITMQ"},
-        {"name":"NODE"},
-        {"name":"ANGLAR"},       
-        {"name":"NEXT"},
-        {"name":"JAVA SCRIPT"},
-        {"name":"TYPE SCRIPT"},
-        {"name":"C SHARP"}
+        {"name":".NET.png"},        
+        {"name":"REACT AND REACT NATIVE.svg"},
+        {"name":"SQL SERVER.png"},
+        {"name":"REDIS.webp"},
+        {"name":"RABBITMQ.png"},
+        {"name":"MONGODB.webp"},
+        {"name":"TYPE SCRIPT.svg"},
+        {"name":"NODE.svg"},
+        {"name":"ANGULAR.webp"},       
+        {"name":"NEXT.svg"},
+        {"name":"JAVA SCRIPT.svg"},
+        {"name":"C SHARP.svg"}
     ]
 }
