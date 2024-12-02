@@ -42,9 +42,9 @@ function Navbar() {
 
   return (
     <React.Fragment>
-      <header className={`fixed w-screen transition flex top-0 left-0 justify-center items-center z-30 dark:text-zinc-50 ${navStyle ? ' bg-zinc-50 shadow-lg  dark:bg-zinc-900 ' : ' '}`}>
+      <header className={`fixed w-screen transition flex top-0 left-0 justify-center items-center z-30 ${navStyle ? ' bg-zinc-50 shadow-lg  dark:bg-zinc-900 ' : ' '}`}>
         <Container>
-          <nav className="flex items-center  font-semibold justify-between lg:justify-center h-20 gap-x-12 font-light">
+          <nav className="flex items-center font-semibold justify-between lg:justify-center h-20 gap-x-12 ">
             <div className="hidden lg:block">
               <Anch href="/#about-me" className={`text-md leading-6`}>{texts.aboutMe}</Anch>
               <Gradientline />
@@ -68,10 +68,10 @@ function Navbar() {
               </DropdownMenu.Trigger>
               <DropdownMenu.Portal>
                 <DropdownMenu.Content className={`DropdownMenuContent mt-6 w-32 dark:bg-zinc-900  bg-zinc-50 lg:shadow-lg flex flex-col`} sideOffset={5}>
-                  <DropdownMenu.Item className={`hover:bg-zinc-300 p-3 focus-visible:outline-none dark:text-white ${navStyle ? 'text-md leading-6' : ''}`}>
+                  <DropdownMenu.Item className={`hover:bg-zinc-500 p-3 focus-visible:outline-none dark:text-white ${navStyle ? 'text-md leading-6' : ''}`}>
                     <Locale href="pt-br">Português</Locale>
                   </DropdownMenu.Item>
-                  <DropdownMenu.Item className={`hover:bg-zinc-300 p-3 focus-visible:outline-none  dark:text-white ${navStyle ? 'text-md leading-6' : ''}`}>
+                  <DropdownMenu.Item className={`hover:bg-zinc-500 p-3 focus-visible:outline-none  dark:text-white ${navStyle ? 'text-md leading-6' : ''}`}>
                     <Locale href="en-us">English</Locale>
                   </DropdownMenu.Item>
                 </DropdownMenu.Content>
@@ -87,7 +87,6 @@ function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               </svg>
             </button>
-
           </nav>
         </Container>
         <div className={`fixed justify-end w-full flex top-0 h-screen transition-all ${mobileMenuOpen ? "left-0" : "left-full"}`}>

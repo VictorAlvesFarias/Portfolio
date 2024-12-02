@@ -66,18 +66,17 @@ export default async function Home() {
               <Gradientline />
             </div>
             <div className=" flex gap-1 w-full ">
-              <TecnologieCard data={repos.technologies[1]} ></TecnologieCard>
-              <TecnologieCard data={repos.technologies[0]}></TecnologieCard>
+              <TecnologieCard data={repos.technologies[0]} ></TecnologieCard>
+              <TecnologieCard data={repos.technologies[1]}></TecnologieCard>
             </div>
             <div className="grid grid-cols-2 xl:grid-cols-4 gap-1 w-full">
-              {repos.technologies.slice(2).map((item: any, index: any) =>
+              {repos.technologies.slice(2, - ((repos.technologies.length - 2) % 4)).map((item: any, index: any) =>
                 <div key={index} className='w-full  items-center  font-semibold rounded shadow-sm bg-zinc-100 dark:bg-zinc-800  p-6 flex gap-3'>
                   <Image width={30} height={30} src={item.src} alt={''} />
                   <p>{item.name}</p>
                 </div>
               )}
             </div>
-
           </div>
         </Section>
         <div id='analitics' className='hidden'></div>
@@ -101,16 +100,7 @@ export default async function Home() {
             </div>
           </div>
         </Section>
-        <Section>
-          <div className='flex items-center py-3 flex-col'>
-            <p className='font-bold mb-6 text-zinc-600  text-base dark:text-white' >{texts.siteInfo.title}</p>
-            <div className='w-full flex justify-around saturate-50'>
-              <Image className='w-10' width={25} height={25} src={talwindIcon} alt={'Tailwind Icon'}></Image>
-              <Image className='w-10' width={25} height={25} src={nextJsIcon} alt={'Next Icon'}></Image>
-              <Image className='w-8' width={25} height={25} src={typescriptIcon} alt={'Ts Icon'}></Image>
-            </div>
-          </div>
-        </Section>
+
       </div>
     </div>
   )
