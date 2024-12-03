@@ -16,6 +16,8 @@ import Gradientline from '@/components/gradient-line';
 import TecnologieCard from '@/components/tecnologie-card';
 import Anch from '@/components/anch';
 import LanguagesMetrics from '@/containers/languages-metrics';
+import Elipses from '@/components/elipses';
+import TecnologieCardMin from '@/components/tecnologie-card-min';
 
 export default async function Home() {
   const repos: any = await GetProfileDatas()
@@ -66,15 +68,12 @@ export default async function Home() {
               <Gradientline />
             </div>
             <div className=" flex gap-1 w-full ">
-              <TecnologieCard data={repos.technologies[0]} ></TecnologieCard>
-              <TecnologieCard data={repos.technologies[1]}></TecnologieCard>
+              <TecnologieCard data={repos.technologies[0]} />
+              <TecnologieCard data={repos.technologies[1]} />
             </div>
             <div className="grid grid-cols-2 xl:grid-cols-4 gap-1 w-full">
               {repos.technologies.slice(2, - ((repos.technologies.length - 2) % 4)).map((item: any, index: any) =>
-                <div key={index} className='w-full  items-center  font-semibold rounded shadow-sm bg-zinc-100 dark:bg-zinc-800  p-6 flex gap-3'>
-                  <Image width={30} height={30} src={item.src} alt={''} />
-                  <p className='font-semibold md:text-1xl text-center overflow-hidden text-ellipsis whitespace-nowrap'>{item.name}</p>
-                </div>
+                <TecnologieCardMin key={index} data={item} />
               )}
             </div>
           </div>

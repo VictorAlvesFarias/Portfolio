@@ -1,10 +1,11 @@
 'use client'
 
-import React, {useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 const ToggleTheme = () => {
-  const [isDarkmode, setIsDarkmode] = useState(false);
+  const localStorageKey = "is_dark_mode";
+  const [isDarkmode, setIsDarkmode] = useState(localStorage.getItem(localStorageKey) == "true");
 
   const darkIcon = (
     <svg
@@ -39,24 +40,23 @@ const ToggleTheme = () => {
   );
 
   function handleToggle() {
+    localStorage.setItem(localStorageKey, String(!isDarkmode))
     setIsDarkmode(!isDarkmode)
-    isDarkmode ? document.documentElement.classList.remove('dark') : document.documentElement.classList.add('dark')
-  } 
+  }
 
   useEffect(() => {
-  setIsDarkmode(document.documentElement.classList.value == "dark")
-  }, [])
-  
-  
+    !isDarkmode ? document.documentElement.classList.remove('dark') : document.documentElement.classList.add('dark')
+  }, [isDarkmode])
+
   return (
     <button
       className="rounded-full w-10 bg-white dark:bg-zinc-700 flex items-center transition duration-300 focus:outline-none shadow"
       onClick={handleToggle}
     >
       <div
-        className={(isDarkmode? '-translate-x-2 bg-gradient-to-r from-zinc-700 to-violet-800 ':'bg-gradient-to-r from-rose-400 to-violet-600 translate-x-full ')+"w-6 h-6 relative rounded-full transition duration-500 transform  -translate-x-2 p-1 text-white"}
+        className={(isDarkmode ? '-translate-x-2 bg-gradient-to-r from-zinc-700 to-violet-800 ' : 'bg-gradient-to-r from-rose-400 to-violet-600 translate-x-full ') + "w-6 h-6 relative rounded-full transition duration-500 transform  -translate-x-2 p-1 text-white"}
       >
-        {isDarkmode ? darkIcon : lightIcon}
+        {!isDarkmode ? lightIcon : darkIcon}
       </div>
     </button>
   );
