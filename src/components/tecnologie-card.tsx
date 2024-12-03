@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Elipses from './elipses'
 
 function TecnologieCard({ data }: any) {
   return (
@@ -8,9 +9,9 @@ function TecnologieCard({ data }: any) {
         <div className='w-full flex items-center justify-center'>
           <Image alt='' width={60} height={60} src={data.src}></Image>
         </div>
-        <div className='font-semibold md:text-1xl text-center overflow-hidden text-ellipsis px-6 whitespace-nowrap'>
+        <Elipses className='font-semibold md:text-1xl text-center px-6'>
           {data.name}
-        </div>
+        </Elipses>
       </div>
     </div>
   )
