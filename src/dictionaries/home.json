@@ -25,9 +25,6 @@
         },
         "siteInfo": {
             "title": "This site was made using:"
-        },
-        "footer": {
-            "title": "Developed by Victor"
         }
     },
     "pt-br": {
@@ -56,9 +53,6 @@
         },
         "siteInfo": {
             "title": "Esse site foi feito usando:"
-        },
-        "footer": {
-            "title": "Desenvolvido por Victor"
         }
     }
 }
