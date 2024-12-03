@@ -45,22 +45,22 @@ function Navbar() {
       <header className={`fixed w-screen transition flex top-0 left-0 justify-center items-center z-30 ${navStyle ? ' bg-zinc-50 shadow-lg  dark:bg-zinc-900 ' : ' '}`}>
         <Container>
           <nav className="flex items-center font-semibold justify-between lg:justify-center h-20 gap-x-12 ">
-            <div className="hidden lg:block">
-              <Anch href="/#about-me" className={`text-md leading-6`}>{texts.aboutMe}</Anch>
+            <div onClick={() => setMobileMenuOpen(false)} className="hidden lg:block">
+              <Anch href="/#about-me" className={`text-md`}>{texts.aboutMe}</Anch>
               <Gradientline />
             </div>
-            <div className="hidden lg:block">
-              <Anch href="/#technologies" className={`text-md leading-6`}>{texts.technologies}</Anch>
+            <div onClick={() => setMobileMenuOpen(false)} className="hidden lg:block">
+              <Anch href="/#technologies" className={`text-md`}>{texts.technologies}</Anch>
               <Gradientline />
             </div>
-            <div className="hidden lg:block">
-              <Anch href="/#links" className={`text-md leading-6`}>{texts.links}</Anch>
+            <div onClick={() => setMobileMenuOpen(false)} className="hidden lg:block">
+              <Anch href="/#links" className={`text-md`}>{texts.links}</Anch>
               <Gradientline />
             </div>
             <DropdownMenu.Root >
               <DropdownMenu.Trigger asChild>
                 <div className="hidden lg:block">
-                  <button className={`flex justify-center items-center text-md leading-6`} aria-label="Customise options">
+                  <button className={`flex justify-center items-center text-md`} aria-label="Customise options">
                     {texts.language}
                   </button>
                   <Gradientline />
@@ -68,10 +68,10 @@ function Navbar() {
               </DropdownMenu.Trigger>
               <DropdownMenu.Portal>
                 <DropdownMenu.Content className={`DropdownMenuContent mt-6 w-32 dark:bg-zinc-900  bg-zinc-50 lg:shadow-lg flex flex-col`} sideOffset={5}>
-                  <DropdownMenu.Item className={`hover:bg-zinc-500 p-3 focus-visible:outline-none dark:text-white ${navStyle ? 'text-md leading-6' : ''}`}>
+                  <DropdownMenu.Item className={`hover:bg-zinc-500 p-3 focus-visible:outline-none dark:text-white ${navStyle ? 'text-md' : ''}`}>
                     <Locale href="pt-br">Português</Locale>
                   </DropdownMenu.Item>
-                  <DropdownMenu.Item className={`hover:bg-zinc-500 p-3 focus-visible:outline-none  dark:text-white ${navStyle ? 'text-md leading-6' : ''}`}>
+                  <DropdownMenu.Item className={`hover:bg-zinc-500 p-3 focus-visible:outline-none  dark:text-white ${navStyle ? 'text-md' : ''}`}>
                     <Locale href="en-us">English</Locale>
                   </DropdownMenu.Item>
                 </DropdownMenu.Content>
@@ -106,27 +106,31 @@ function Navbar() {
               </div>
               <div className="mt-6 flow-root">
                 <div className="-my-6 divide-y divide-gray-500/10">
-                  <div className="space-y-2 py-6">
-                    <div className="block">
-                      <Anch href="/#about-me" className={`pl-3 text-md leading-6`}>{texts.aboutMe}</Anch>
+                  <div className="flex flex-col gap-6">
+                    <div onClick={() => setMobileMenuOpen(false)} className="block ">
+                      <Anch href="/#about-me" className={`text-md`}>{texts.aboutMe}</Anch>
                       <Gradientline />
                     </div>
-                    <div className="block">
-                      <Anch href="/projects" className={`pl-3 text-md leading-6`}>{texts.jobs}</Anch>
+                    <div onClick={() => setMobileMenuOpen(false)} className="block">
+                      <Anch href="/#technologies" className={`text-md`}>{texts.technologies}</Anch>
                       <Gradientline />
                     </div>
-                    <div className="block">
-                      <Anch href="/technologies" className={`pl-3 text-md leading-6`}>{texts.technologies}</Anch>
+                    <div onClick={() => setMobileMenuOpen(false)} className="block">
+                      <Anch href="/#links" className={`text-md`}>{texts.links}</Anch>
                       <Gradientline />
                     </div>
                     <div onClick={() => setMobileMenuLanguage(!mobileMenuLanguage)} >
-                      <span className={`pl-3 text-md leading-6 cursor-pointer`}>{texts.language} </span>
+                      <span className={`pl-3 text-md cursor-pointer`}>{texts.language} </span>
                       <Gradientline />
-                      <div className={`pl-10 mt-2 transition-all overflow-hidden ${mobileMenuLanguage ? "h-20" : "h-0"}`}>
-                        <Locale href="pt-br" className={`pl-3 text-md leading-6`}>Português</Locale>
-                        <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-pink-400 to-pink-300'></div>
-                        <Locale href="en-us" className={`pl-3 text-md leading-6`}>English</Locale>
-                        <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-pink-400 to-pink-300'></div>
+                      <div className={`pl-10  flex flex-col gap-6 transition-all overflow-hidden ${mobileMenuLanguage ? "h-32" : "h-0"}`}>
+                        <div onClick={() => setMobileMenuOpen(false)} className="block mt-6">
+                          <Locale href="pt-br" className={`pl-3 text-md`}>Português</Locale>
+                          <Gradientline />
+                        </div>
+                        <div onClick={() => setMobileMenuOpen(false)} className="block">
+                          <Locale href="en-us" className={`pl-3 text-md`}>English</Locale>
+                          <Gradientline />
+                        </div>
                       </div>
                     </div>
                   </div>
