@@ -1,24 +1,20 @@
-import Image from 'next/image'
+import Gradientline from '@/components/gradient-line';
+import Section from '@/components/section';
+import TecnologieCard from '@/components/tecnologie-card';
+import TecnologieCardMin from '@/components/tecnologie-card-min';
+import LanguagesMetrics from '@/containers/languages-metrics';
+import { GetProfileDatas } from '@/services/profile-service';
+import Image from 'next/image';
+import { Languages } from '../../../i18n.config';
 import {
-  profileImg,
   githubPictureIcon,
   linkedinPictureIcon,
-  nextJsIcon,
-  talwindIcon,
-  typescriptIcon
-} from "../../../public/public-modules"
+  profileImg
+} from "../../../public/public-modules";
+import Dictionaries from '../../dictionaries/home.json';
 import useServerInter from '../../utils/hooks/use-server-inter';
-import Dictionaries from '../../dictionaries/home.json'
-import { GetProfileDatas } from '@/services/profile-service';
-import { Languages } from '../../../i18n.config';
-import Section from '@/components/section';
-import Gradientline from '@/components/gradient-line';
-import TecnologieCard from '@/components/tecnologie-card';
-import Anch from '@/components/anch';
-import LanguagesMetrics from '@/containers/languages-metrics';
-import Elipses from '@/components/elipses';
-import TecnologieCardMin from '@/components/tecnologie-card-min';
-import Test from '../../components/expansive-background';
+import Test from './test';
+import FadeIn from '@/components/fade-in';
 
 export default async function Home() {
   const repos: any = await GetProfileDatas()
@@ -40,28 +36,30 @@ export default async function Home() {
             </div>
           </div>
         </header>
-        <div className=' w-full h-[100vh] '/>
+        <div className=' w-full h-[100vh] ' />
         <div className="text-sm flex w-full flex-col justify-center items-center z-[21]">
           <div id='about-me' className='hidden'></div>
           <Section>
-            <div className="flex xs:flex-row xs:items-stretch items-center xs:gap-6 flex-col justify-between text-2xl pb-6 ">
-              <Image
-                className='xs:w-40 xs:h-auto xs:mb-0 mb-12 w-40 object-cover rounded-xs'
-                src={profileImg}
-                width={250}
-                height={500}
-                alt="Victor Image"
-                style={{ objectFit: "cover" }}
-              />
-              <div className="flex flex-col gap-12">
-                <h2 className='text-lg md:text-start text-center lg:text-2xl w-full dark:text-white'>
-                  {texts.aboutMe.title}
-                </h2>
-                <p className="text-lg dark:text-white">
-                  {texts.aboutMe.paragraph[0]}
-                </p>
+            <FadeIn>
+              <div className="flex xs:flex-row xs:items-stretch items-center xs:gap-6 flex-col justify-between text-2xl pb-6 ">
+                <Image
+                  className='xs:w-40 xs:h-auto xs:mb-0 mb-12 w-40 object-cover rounded-xs'
+                  src={profileImg}
+                  width={250}
+                  height={500}
+                  alt="Victor Image"
+                  style={{ objectFit: "cover" }}
+                />
+                <div className="flex flex-col gap-12">
+                  <h2 className='text-lg md:text-start text-center lg:text-2xl w-full dark:text-white'>
+                    {texts.aboutMe.title}
+                  </h2>
+                  <p className="text-lg dark:text-white">
+                    {texts.aboutMe.paragraph[0]}
+                  </p>
+                </div>
               </div>
-            </div>
+            </FadeIn> 
           </Section>
           <div id='technologies' className='hidden'></div>
           <Section>

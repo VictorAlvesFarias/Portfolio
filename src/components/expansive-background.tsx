@@ -7,40 +7,34 @@ export default function ExpansiveBackground() {
     const [scrolled, setScrolled] = useState(false)
 
     useEffect(() => {
-        const handleScroll = (event: WheelEvent) => {
-            setScrolled(true)
-            setSize(prevSize => {
-                if (event.deltaY > 0) {
-                    if (window.scrollY < window.screen.height) {
-                        return Math.min(prevSize + 15, 100);
-                    }
-                } else if (window.scrollY < window.screen.height) {
-                    return Math.max(prevSize - 15, 0);
-                }
-
-                return prevSize;
-            });
+        const handleScroll: any = () => {
+            const x = Math.min((window.scrollY * 100) / window.screen.height * 1.8, 100);
+            if (x <= 100) {
+                setSize(x);
+            }
         };
 
-        setSize((window.scrollY * 100) / window.screen.height)
-
-        window.addEventListener('wheel', handleScroll);
+        window.addEventListener("scroll", handleScroll);
 
         return () => {
-            window.removeEventListener('wheel', handleScroll);
+            window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
-
     return (
         <div
-            className={`${scrolled ? "transition-all" : ""} flex bg-gradient-to-r from-rose-400 to-violet-600 z-20 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${size == 100 ? "rounded-none" : "rounded-lg"}`}
+            className="rounded flex  bg-gradient-to-r z-20 from-rose-200 to-violet-400 dark:from-rose-400 dark:to-violet-600 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             style={{
                 width: `${size}vw`,
                 height: `${size}vh`,
-                boxShadow: '0 4px 30px rgba(255, 0, 255, 0.2), 0 4px 30px rgba(0, 0, 255, 0.3)', // exemplo de sombra com gradiente
             }}
         >
+            <div
+                className="w-full h-full relative flex items-center justify-center rounded bg-gradient-to-r from-rose-200 to-violet-400 dark:from-rose-400 dark:to-violet-600  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            >
+                <div className="absolute inset-0 z-10 blur-xl opacity-50 rounded-lg bg-gradient-to-r from-rose-300 to-violet-500 dark:from-rose-500 dark:to-violet-700"></div>
+                <div className="w-full h-full"></div>
+            </div>
         </div>
     );
 }
