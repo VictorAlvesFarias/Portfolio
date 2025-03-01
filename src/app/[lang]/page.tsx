@@ -13,7 +13,6 @@ import {
 } from "../../../public/public-modules";
 import Dictionaries from '../../dictionaries/home.json';
 import useServerInter from '../../utils/hooks/use-server-inter';
-import Test from './test';
 import FadeIn from '@/components/fade-in';
 
 export default async function Home() {
