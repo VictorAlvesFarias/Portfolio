@@ -15,7 +15,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className='min-h-screen bg-white dark:bg-zinc-900 scroll-smooth dark:text-zinc-50 '>
         <Navbar></Navbar>
         {children}
-        <ExpansiveBackground></ExpansiveBackground>
         <Footer></Footer>
       </body>
     </html>

@@ -14,6 +14,7 @@ import {
 import Dictionaries from '../../dictionaries/home.json';
 import useServerInter from '../../utils/hooks/use-server-inter';
 import FadeIn from '@/components/fade-in';
+import ExpansiveBackground from '@/components/expansive-background';
 
 export default async function Home() {
   const repos: any = await GetProfileDatas()
@@ -36,6 +37,7 @@ export default async function Home() {
           </div>
         </header>
         <div className=' w-full h-[100vh] ' />
+        <ExpansiveBackground></ExpansiveBackground>
         <div className="text-sm flex w-full flex-col justify-center items-center z-[21]">
           <div id='about-me' className='hidden'></div>
           <Section>
