@@ -2,15 +2,13 @@
 
 import { useEffect, useState } from 'react'
 import React from 'react';
-import Container from './container';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import Dictionaries from '../dictionaries/navbar.json'
-import Anch from './anch';
-import Gradientline from './gradient-line';
-import ToggleTheme from './toggle-theme';
+import Anch from '../components/anch';
+import Gradientline from '../components/gradient-line';
+import ToggleTheme from '../components/toggle-theme';
 import useClientInter from '@/utils/hooks/use-client-inter';
 import { Languages } from '../../i18n.config';
-import Locale from './locale';
 
 function Navbar() {
   const [navStyle, setNavStyle] = useState(false);
@@ -40,52 +38,54 @@ function Navbar() {
   return (
     <React.Fragment>
       <header className={`fixed w-screen transition flex top-0 left-0 justify-center items-center z-30 ${navStyle ? ' bg-zinc-50 shadow-lg  dark:bg-zinc-900 ' : ' '}`}>
-        <Container>
-          <nav className="flex items-center font-semibold justify-between lg:justify-center h-20 gap-x-12 ">
-            <Anch href="/#about-me" className="hidden lg:block">
-              <span className={`text-md`}>{texts.aboutMe}</span>
-              <Gradientline />
-            </Anch>
-            <Anch href="/#technologies" className="hidden lg:block">
-              <span className={`text-md`}>{texts.technologies}</span>
-              <Gradientline />
-            </Anch>
-            <Anch href="/#links" className="hidden lg:block">
-              <span className={`text-md`}>{texts.links}</span>
-              <Gradientline />
-            </Anch>
-            <DropdownMenu.Root>
-              <DropdownMenu.Trigger asChild>
-                <div className="hidden lg:block">
-                  <button className={`flex justify-center items-center text-md`} aria-label="Customise options">
-                    {texts.language}
-                  </button>
-                  <Gradientline />
-                </div>
-              </DropdownMenu.Trigger>
-              <DropdownMenu.Portal>
-                <DropdownMenu.Content className={`DropdownMenuContent mt-6 w-32 dark:bg-zinc-900  bg-zinc-50 lg:shadow-lg flex flex-col`} sideOffset={5}>
-                  <DropdownMenu.Item className={`hover:bg-zinc-500 p-3 focus-visible:outline-none dark:text-white ${navStyle ? 'text-md' : ''}`}>
-                    <Locale href="pt-br">Português</Locale>
-                  </DropdownMenu.Item>
-                  <DropdownMenu.Item className={`hover:bg-zinc-500 p-3 focus-visible:outline-none  dark:text-white ${navStyle ? 'text-md' : ''}`}>
-                    <Locale href="en-us">English</Locale>
-                  </DropdownMenu.Item>
-                </DropdownMenu.Content>
-              </DropdownMenu.Portal>
-            </DropdownMenu.Root>
-            <div className="lg:block">
-              <ToggleTheme />
-              <Gradientline />
-            </div>
-            <button type="button" onClick={() => setMobileMenuOpen(true)} className={`lg:hidden -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-all text-gray-700 `}>
-              <span className="sr-only">Open main menu</span>
-              <svg className={"h-7 w-9 text-yellow-50 stroke-black dark:stroke-white"} fill="none" viewBox="0 0 24 24" strokeWidth="1.5" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            </button>
-          </nav>
-        </Container>
+        <div className="items-center w-full justify-center flex flex-col">
+          <div className="max-w-128 w-11/12 lg:px-0 px-5 ">
+            <nav className="flex items-center font-semibold justify-between lg:justify-center h-20 gap-x-12 ">
+              <Anch href="/#about-me" className="hidden lg:block">
+                <span className={`text-md`}>{texts.aboutMe}</span>
+                <Gradientline />
+              </Anch>
+              <Anch href="/#technologies" className="hidden lg:block">
+                <span className={`text-md`}>{texts.technologies}</span>
+                <Gradientline />
+              </Anch>
+              <Anch href="/#links" className="hidden lg:block">
+                <span className={`text-md`}>{texts.links}</span>
+                <Gradientline />
+              </Anch>
+              <DropdownMenu.Root>
+                <DropdownMenu.Trigger asChild>
+                  <div className="hidden lg:block">
+                    <button className={`flex justify-center items-center text-md`} aria-label="Customise options">
+                      {texts.language}
+                    </button>
+                    <Gradientline />
+                  </div>
+                </DropdownMenu.Trigger>
+                <DropdownMenu.Portal>
+                  <DropdownMenu.Content className={`DropdownMenuContent mt-6 w-32 dark:bg-zinc-900  bg-zinc-50 lg:shadow-lg flex flex-col`} sideOffset={5}>
+                    <DropdownMenu.Item className={`hover:bg-zinc-500 p-3 focus-visible:outline-none dark:text-white ${navStyle ? 'text-md' : ''}`}>
+                      <Anch href="pt-br">Português</Anch>
+                    </DropdownMenu.Item>
+                    <DropdownMenu.Item className={`hover:bg-zinc-500 p-3 focus-visible:outline-none  dark:text-white ${navStyle ? 'text-md' : ''}`}>
+                      <Anch href="en-us">English</Anch>
+                    </DropdownMenu.Item>
+                  </DropdownMenu.Content>
+                </DropdownMenu.Portal>
+              </DropdownMenu.Root>
+              <div className="lg:block">
+                <ToggleTheme />
+                <Gradientline />
+              </div>
+              <button type="button" onClick={() => setMobileMenuOpen(true)} className={`lg:hidden -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-all text-gray-700 `}>
+                <span className="sr-only">Open main menu</span>
+                <svg className={"h-7 w-9 text-yellow-50 stroke-black dark:stroke-white"} fill="none" viewBox="0 0 24 24" strokeWidth="1.5" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </button>
+            </nav>
+          </div>
+        </div>
         <div className={`fixed justify-end w-full flex top-0 h-screen transition-all ${mobileMenuOpen ? "left-0" : "left-full"}`}>
           <div className="lg:hidden w-full h-full flex" role="dialog" aria-modal="true">
             <div onClick={() => setMobileMenuOpen(false)} className='flex-1'></div>
