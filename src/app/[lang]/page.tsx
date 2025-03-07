@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { githubPictureIcon, linkedinPictureIcon, profileImg } from "../../../public/public-modules";
 import Dictionaries from '../../dictionaries/home.json';
 import useServerInter from '../../utils/hooks/use-server-inter';
+import TechnologyList from '@/containers/technology-list';
 
 export default async function Home() {
   const repos = await GetProfileDatas();
@@ -53,23 +54,7 @@ export default async function Home() {
               </div>
             </FadeIn> 
         </Section>
-        <Section>
-          <div className="items-start w-full justify-center gap-y-1 flex flex-col">
-            <div className="pb-12 text-lg lg:text-2xl dark:text-white">
-              <h1 >{texts.technologies.title}</h1>
-              <Gradientline />
-            </div>
-            <div className=" flex gap-1 w-full ">
-              <TecnologieCard data={repos.technologies[0]} />
-              <TecnologieCard data={repos.technologies[1]} />
-            </div>
-            <div className="grid grid-cols-2 xl:grid-cols-4 gap-1 w-full">
-              {repos.technologies.slice(2, - ((repos.technologies.length - 2) % 4)).map((item: any, index: any) =>
-                <TecnologieCardMin key={index} data={item} />
-              )}
-            </div>
-          </div>
-        </Section>
+        <TechnologyList repos={repos}/>
         <LanguagesMetrics />
       </div>
       <footer className="flex w-full flex-col justify-center items-center z-[21] bg-white dark:bg-zinc-900">

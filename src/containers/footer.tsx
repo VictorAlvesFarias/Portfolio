@@ -5,6 +5,28 @@ async function Footer() {
     const language = useServerInter()
     const texts = Dictionaries[language]
 
+    const presencas = ["12321"]
+    
+    const alunos =[
+        {
+            nome:"",
+            codigoAluno:""
+        },
+        {
+            nome:"",
+            codigoAluno:""
+        },
+        {
+            nome:"",
+            codigoAluno:""
+        }
+    ]
+
+
+    alunos.map(e=>{
+        presencas.includes( e.codigoAluno)
+    })
+
     return (
         <div className="relative z-30 items-center w-full justify-center flex flex-col mb-20 border-t-2 border-zinc-300 dark:border-zinc-800">
             <div className="max-w-128 w-11/12 lg:px-0 px-5 flex flex-col gap-8 ">
