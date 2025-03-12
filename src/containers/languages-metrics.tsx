@@ -1,21 +1,15 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import Gradientline from '@/components/gradient-line';
 import { Languages } from '../../i18n.config';
 import useClientInter from '@/utils/hooks/use-client-inter';
 import Dictionaries from '../dictionaries/analytics.json';
-import { Doughnut, Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import { Chart, ArcElement } from 'chart.js'
-import Section from '@/components/section';
-import { paddingPropDefs } from '@radix-ui/themes';
 
 Chart.register(ArcElement);
 
 function LanguagesMetrics() {
-    const language: Languages = useClientInter()
-    const texts = Dictionaries[language]
-
     function generatePastelColorsArray(quantity: number) {
         const violetPastelColorsArray = [];
         const minHue = 257;
@@ -86,44 +80,28 @@ function LanguagesMetrics() {
     }, [])
 
     return (
-        <Section>
-            <div className='flex flex-col'>
-                <div className=" pb-12 w-fit text-lg lg:text-2xl dark:text-white">
-                    <h1 >{texts.title}</h1>
-                    <Gradientline />
-                </div>
-                <div className='flex flex-col p-6 items-center justify-center dark:text-white  gap-6 md:flex-row bg-zinc-100  dark:bg-zinc-800 shadow-sm  rounded-sm'>
-                    <div className=" md:w-1/2 items-start w-full  gap-y-1 flex flex-col">
-                        <p className='w-full font-semibold'>
-                            {texts.paragraph}
-                        </p>
-                    </div>
-                    <div className=' flex md:w-1/3 w-full flex-col gap-3  justify-center items-center'>
-                        <div className='flex gap-3 flex-wrap justify-center'>
-                            {
-                                data.labels.map((item: any, index: any) =>
-                                    <div style={{ backgroundColor: data.datasets[0].backgroundColor[index] }} className=' dark:text-zinc-50 font-semibold flex p-1 px-3 gap-3 items-center rounded' key={index}>
-                                        {item}: {Math.floor(data.datasets[0].data[index])}%
-                                    </div>
-                                )
-                            }
+        <div className=' flex md:w-1/3 w-full flex-col gap-3  justify-center items-center'>
+            <div className='flex gap-3 flex-wrap justify-center'>
+                {
+                    data.labels.map((item: any, index: any) =>
+                        <div style={{ backgroundColor: data.datasets[0].backgroundColor[index] }} className=' dark:text-zinc-50 font-semibold flex p-1 px-3 gap-3 items-center rounded' key={index}>
+                            {item}: {Math.floor(data.datasets[0].data[index])}%
                         </div>
-                        <Doughnut
-                            className='p-6'
-                            data={data}
-                            options={{
-                                plugins: {
-                                    legend: {
-                                        display: false,
-                                    },
-                                }
-                            }}
-                        />
-                    </div>
-                </div>
+                    )
+                }
             </div>
-        </Section>
-
+            <Doughnut
+                className='p-6'
+                data={data}
+                options={{
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                    }
+                }}
+            />
+        </div>
     )
 }
 

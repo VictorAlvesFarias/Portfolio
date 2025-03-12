@@ -58,7 +58,7 @@ export default async function Home() {
           <div className="items-start w-full justify-center gap-y-1 flex flex-col">
             <div className="pb-12 text-lg lg:text-2xl dark:text-white">
               <h1 >{texts.technologies.title}</h1>
-              <Gradientline />
+              {/* <Gradientline /> */}
             </div>
             <div className=" flex gap-1 w-full ">
               <TecnologieCard data={repos.technologies[0]} />
@@ -71,18 +71,33 @@ export default async function Home() {
             </div>
           </div>
         </Section>
-        <LanguagesMetrics />
+        <Section>
+          <div className='flex flex-col'>
+            <div className=" pb-12 w-fit text-lg lg:text-2xl dark:text-white">
+              <h1 >{texts.analytics.title}</h1>
+              {/* <Gradientline /> */}
+            </div>
+            <div className='flex flex-col p-6 items-center justify-center dark:text-white  gap-6 md:flex-row bg-zinc-100  dark:bg-zinc-800 shadow-sm  rounded-sm'>
+              <div className=" md:w-1/2 items-start w-full  gap-y-1 flex flex-col">
+                <p className='w-full font-semibold'>
+                  {texts.analytics.paragraph}
+                </p>
+              </div>
+              <LanguagesMetrics />
+            </div>
+          </div>
+        </Section>
       </div>
       <footer className="flex w-full flex-col justify-center items-center z-[21] bg-white dark:bg-zinc-900">
         <Section>
           <div className="items-start w-full justify-center gap-y-1 flex flex-col">
             <div className="pb-12 text-lg lg:text-2xl dark:text-white">
               <h1>{texts.links.title}</h1>
-              <Gradientline />
+              {/* <Gradientline /> */}
             </div>
             <div className="flex gap-6 w-full flex-wrap">
               <a
-                className="dark:text-white hover:bg-opacity-20 transition-all flex-1 items-center justify-center rounded border p-12 gap-3 border-purple-500 cursor-pointer bg-purple-700 bg-opacity-10"
+                className="flex dark:text-white hover:bg-opacity-20 transition-all flex-1 items-center justify-center rounded border p-12 gap-3 border-purple-500 cursor-pointer bg-purple-700 bg-opacity-10"
                 href="https://github.com/VictorAlvesFarias"
                 target="_blank"
               >
@@ -90,7 +105,7 @@ export default async function Home() {
                 <p>{texts.links.github}</p>
               </a>
               <a
-                className="dark:text-white flex-1 items-center justify-center rounded border p-12 gap-3 border-blue-500 cursor-pointer hover:bg-opacity-20 transition-all bg-blue-700 bg-opacity-10"
+                className="flex dark:text-white flex-1 items-center justify-center rounded border p-12 gap-3 border-blue-500 cursor-pointer hover:bg-opacity-20 transition-all bg-blue-700 bg-opacity-10"
                 href="https://www.linkedin.com/in/victor-alves-farias-023570243/"
                 target="_blank"
               >
