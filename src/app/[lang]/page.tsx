@@ -1,5 +1,5 @@
 import ExpansiveBackground from '@/components/expansive-background';
-import Footer from '@/containers/footer';
+import Footer from '@/components/footer';
 import Gradientline from '@/components/gradient-line';
 import Section from '@/components/section';
 import TecnologieCard from '@/components/tecnologie-card';
