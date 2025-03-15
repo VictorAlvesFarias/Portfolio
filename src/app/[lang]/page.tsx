@@ -75,7 +75,7 @@ export default async function Home() {
   return (
     <div className="text-zinc-900 dark:text-white flex flex-col items-center justify-center w-full">
       <header className="lg:px-0 px-5 flex justify-center items-center w-full min-h-screen bg-gradient-to-t to-zinc-400 to-100% via-zinc-200 via-40% from-transparent dark:to-black dark:via-zinc-800">
-        <div className="md:grid md:pt-0 pt-28 xs:grid-cols-3 flex flex-col items-center max-w-128  gap-9 flex-wrap w-11/12 ">
+        <div className="md:grid py-28 xs:grid-cols-3 flex flex-col items-center max-w-128  gap-9 flex-wrap w-11/12 ">
           <Image src={profileImg} alt={''} className='w-64 h-64 bg-zinc-700 rounded-xl object-cover'></Image>
           <div className='flex flex-col flex-1 gap-6 md:col-span-2 col-span-1 '>
             <h1 className="text-4xl lg:text-7xl flex justify-start text-transparent  w-full bg-clip-text bg-gradient-to-r from-rose-400 to-violet-600">
