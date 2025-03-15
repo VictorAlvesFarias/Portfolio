@@ -1,0 +1,64 @@
+{
+  "header": {
+    "title": [
+      "Olá!"
+    ],
+    "paragraph": [
+      "Me chamo Victor e sou apaixonado por desenvolvimento de software e arquitetura. Acredito que compartilhar conhecimento e discutir diferentes soluções são as melhores formas de aprender, ensinar e evoluir. Busco sempre colaborar para a construção de projetos incríveis, que proporcionem experiências excepcionais às pessoas."
+    ]
+  },
+  "aboutMe": {
+    "title": "Sobre mim",
+    "paragraph": [
+      "Sou um Desenvolvedor Full Stack com experiência em .NET Core, ASP.NET, Angular e React para aplicações web, React Native para mobile e WPF, WinForms e Electron para desktop. Tenho experiência com bancos de dados SQL Server, MongoDB e Redis, além de integração com mensagens usando RabbitMQ e Pub/Sub. Adepto de metodologias ágeis, com foco em boas práticas de codificação (SOLID, Clean Architecture, DDD e TDD) e automação de processos para otimizar o ciclo de desenvolvimento (CI/CD)."
+    ]
+  },
+  "technologies": {
+    "title": "Tecnologias"
+  },
+  "analytics": {
+    "title": "Análises",
+    "paragraph": "Esta é uma análise desde que comecei meus estudos de programação em 2020. O gráfico mostra as linguagens que mais usei até hoje."
+  },
+  "links": {
+    "title": "Links",
+    "github": "Veja os projetos públicos em que participei",
+    "linkedin": "Veja sobre minha carreira e experiência"
+  },
+  "footer": {
+    "title": "Obrigado por vir até aqui"
+  },
+  "experiences": [
+    {
+      "company": "Centro Universitário Barão de Mauá",
+      "location": "Ribeirão Preto, São Paulo, Brasil · Presencial",
+      "img": "baraoIcon",
+      "roles": [
+        {
+          "title": "Desenvolvedor Full Stack",
+          "type": "Tempo integral",
+          "start": "2024-04-01"
+        },
+        {
+          "title": "Desenvolvedor de Software",
+          "type": "Estágio",
+          "start": "2023-07-01",
+          "end": "2024-04-01"
+        }
+      ]
+    },
+    {
+      "company": "Open Promotora",
+      "location": "Orlândia, São Paulo, Brasil · Presencial",
+      "img": "openPromotaIcon",
+      "roles": [
+        {
+          "title": "Desenvolvedor Full Stack",
+          "type": "PJ",
+          "start": "2024-04-01",
+          "end": "2024-09-01"
+        }
+      ]
+    }
+  ]
+}

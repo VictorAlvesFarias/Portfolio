@@ -1,0 +1,64 @@
+{
+  "header": {
+    "title": [
+      "Hi there!"
+    ],
+    "paragraph": [
+      "My name is Victor and I am passionate about software development and architecture. I believe that sharing knowledge and discussing different solutions are the best ways to learn, teach and evolve. I always seek to collaborate in the construction of incredible projects that provide exceptional experiences to people."
+    ]
+  },
+  "aboutMe": {
+    "title": "About me",
+    "paragraph": [
+      "I am Full Stack Developer with experience in .NET Core, ASP.NET, Angular and React for web applications, React Native for mobile and WPF, WinForms and Electron for desktop. Experience with SQL Server, MongoDB and Redis databases, as well as integration with messages using RabbitMQ and Pub/Sub. Adept at agile methodologies, focusing on good coding practices (SOLID, Clean Architecture, DDD and TDD) and process automation to optimize the development cycle (CI/CD)."
+    ]
+  },
+  "technologies": {
+    "title": "Technologies"
+  },
+  "analytics": {
+    "title": "Analytics",
+    "paragraph": "This is an analysis from when I started my programming studies in 2020, the graph shows the languages ​​I used most until today."
+  },
+  "links": {
+    "title": "Links",
+    "github": "See the public projects in which I participate",
+    "linkedin": "See about my career and experience"
+  },
+  "footer": {
+    "title": "Thank you for coming here"
+  },
+  "experiences": [
+    {
+      "company": "Centro Universitário Barão de Mauá",
+      "location": "Ribeirão Preto, São Paulo, Brazil · On-site",
+      "img": "baraoIcon",
+      "roles": [
+        {
+          "title": "Full Stack Developer",
+          "type": "Full-time",
+          "start": "2024-04-01"
+        },
+        {
+          "title": "Software Developer",
+          "type": "Internship",
+          "start": "2023-07-01",
+          "end": "2024-04-01"
+        }
+      ]
+    },
+    {
+      "company": "Open Promotora",
+      "location": "Orlândia, São Paulo, Brazil · On-site",
+      "img": "openPromotaIcon",
+      "roles": [
+        {
+          "title": "Full Stack Developer",
+          "type": "Contract",
+          "start": "2024-04-01",
+          "end": "2024-09-01"
+        }
+      ]
+    }
+  ]
+}

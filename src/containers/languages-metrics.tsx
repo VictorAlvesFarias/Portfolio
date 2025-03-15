@@ -1,9 +1,6 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import { Languages } from '../../i18n.config';
-import useClientInter from '@/utils/hooks/use-client-inter';
-import Dictionaries from '../dictionaries/analytics.json';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart, ArcElement } from 'chart.js'
 
@@ -84,7 +81,8 @@ function LanguagesMetrics() {
             <div className='flex gap-3 flex-wrap justify-center'>
                 {
                     data.labels.map((item: any, index: any) =>
-                        <div style={{ backgroundColor: data.datasets[0].backgroundColor[index] }} className=' dark:text-zinc-50 font-semibold flex p-1 px-3 gap-3 items-center rounded' key={index}>
+                        data.datasets[0].data[index] > 1 &&
+                        <div style={{ backgroundColor: data.datasets[0].backgroundColor[index] }} className=' dark:text-zinc-50 flex p-1 px-3 gap-3 items-center rounded' key={index}>
                             {item}: {Math.floor(data.datasets[0].data[index])}%
                         </div>
                     )

@@ -2,8 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 
-
-const ToggleTheme = () => {
+const ToggleTheme = ({ className }: any) => {
   const localStorageKey = "is_dark_mode";
   const [isDarkmode, setIsDarkmode] = useState(localStorage.getItem(localStorageKey) == "true");
 
@@ -40,24 +39,24 @@ const ToggleTheme = () => {
   );
 
   function handleToggle() {
-    localStorage.setItem(localStorageKey, String(!isDarkmode))
-    setIsDarkmode(!isDarkmode)
+    localStorage.setItem(localStorageKey, String(!isDarkmode));
+    setIsDarkmode(!isDarkmode);
   }
 
   useEffect(() => {
-    !isDarkmode ? document.documentElement.classList.remove('dark') : document.documentElement.classList.add('dark')
-  }, [isDarkmode])
+    if (isDarkmode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkmode]);
 
   return (
     <button
-      className="rounded-full w-10 bg-white dark:bg-zinc-700 flex items-center transition duration-300 focus:outline-none shadow"
+      className={className}
       onClick={handleToggle}
     >
-      <div
-        className={(isDarkmode ? '-translate-x-2 bg-gradient-to-r from-zinc-700 to-violet-800 ' : 'bg-gradient-to-r from-rose-400 to-violet-600 translate-x-full ') + "w-6 h-6 relative rounded-full transition duration-500 transform  -translate-x-2 p-1 text-white"}
-      >
-        {!isDarkmode ? lightIcon : darkIcon}
-      </div>
+      {isDarkmode ? darkIcon : lightIcon}
     </button>
   );
 };

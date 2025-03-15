@@ -1,9 +1,15 @@
+import { componentSelector } from '@/utils/helpers/component-selector'
 import React from 'react'
 
-function Gradientline() {
-  return (
-    <div className='w-full h-[3px] mt-2 bg-gradient-to-r from-rose-400  to-fuchsia-700 '></div>
+interface ILine {
+}
+
+const lineVariations = {
+  "default": () => (
+    <div className='w-full h-[3px] bg-gradient-to-r from-rose-400 to-fuchsia-700'></div>
   )
 }
 
-export default Gradientline
+const Line = componentSelector<keyof typeof lineVariations, ILine>(lineVariations)
+
+export default Line
