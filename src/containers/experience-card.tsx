@@ -28,14 +28,14 @@ export default function ExperienceCard({ company, location, roles, img }: any) {
         let durationParts = [];
 
         if (diffYears > 0) {
-            durationParts.push(`${diffYears} ${diffYears > 1 ? texts.years : texts.year}`);
+            durationParts.push(`${diffYears} ${diffYears > 1 ? texts?.years : texts?.year}`);
         }
 
         if (diffMonths > 0) {
-            durationParts.push(`${diffMonths} ${diffMonths > 1 ? texts.months : texts.month}`);
+            durationParts.push(`${diffMonths} ${diffMonths > 1 ? texts?.months : texts?.month}`);
         }
 
-        return durationParts.length > 0 ? durationParts.join(` ${texts.and} `) : `1 ${texts.month}`;
+        return durationParts.length > 0 ? durationParts.join(` ${texts?.and} `) : `1 ${texts?.month}`;
     }
 
     function calculateTotalDuration() {
@@ -90,7 +90,7 @@ export default function ExperienceCard({ company, location, roles, img }: any) {
                                         <h4 className="text-xl">{role.title}</h4>
                                         <p className="text-sm">{role.type}</p>
                                         <p className="text-sm">
-                                            {role.start} - {role.end || texts.atTheMoment} · {duration}
+                                            {role.start} - {role.end || texts?.atTheMoment} · {duration}
                                         </p>
                                         <p className="text-sm mt-1"> {role.skills}</p>
                                     </div>
