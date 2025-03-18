@@ -11,7 +11,7 @@ import { useState } from 'react';
 import useClientInter from '@/utils/hooks/use-client-inter';
 
 export default function ExperienceCard({ company, location, roles, img }: any) {
-    const [texts, setTexts] = useState<any>({})
+    const texts = useClientInter<any>("experiences")
 
     function calculateDuration(start: any, end: any) {
         const startDate = new Date(start);
@@ -52,10 +52,6 @@ export default function ExperienceCard({ company, location, roles, img }: any) {
 
         return calculateDuration(minStart, maxEnd);
     }
-
-    useClientInter("experiences", (e) => {
-        setTexts(e)
-    })
 
     const totalDuration = calculateTotalDuration();
 

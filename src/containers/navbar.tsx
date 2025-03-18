@@ -13,7 +13,7 @@ function Navbar() {
   const [navStyle, setNavStyle] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileMenuLanguage, setMobileMenuLanguage] = useState(false)
-  const [texts, setTexts] = useState<any>({})
+  const texts = useClientInter<any>("navbar")
 
   useEffect(() => {
     const handleScroll: any = () => {
@@ -30,10 +30,6 @@ function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [navStyle]);
-
-  useClientInter("navbar", (e) => {
-    setTexts(e)
-  })
 
   return (
     <>
