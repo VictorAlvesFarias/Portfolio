@@ -5,8 +5,6 @@ const dictionaryImports = {
 
 export function languageFactory(locale: string) {
     return dictionaryImports[locale as Languages] ?? dictionaryImports[defaultLocale];
-
-
 }
 
 export const defaultLocale: Languages = "en-us";
