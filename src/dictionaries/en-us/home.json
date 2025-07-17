@@ -29,6 +29,18 @@
     "title": "Thank you for coming here"
   },
   "experiences": [
+     {
+      "company": "Função Sistemas",
+      "location": "São Paulo, São Paulo, Brazil · On-site",
+      "img": "funcaosistemas",
+      "roles": [
+        {
+          "title": "Full Stack Developer",
+          "type": "Full-time",
+          "start": "2025-07-11"
+        }
+      ]
+    },
     {
       "company": "Centro Universitário Barão de Mauá",
       "location": "Ribeirão Preto, São Paulo, Brazil · On-site",
@@ -37,7 +49,9 @@
         {
           "title": "Full Stack Developer",
           "type": "Full-time",
-          "start": "2024-04-01"
+          "start": "2024-04-01",
+          "end": "2025-07-11"
+
         },
         {
           "title": "Software Developer",

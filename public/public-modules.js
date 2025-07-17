@@ -25,6 +25,7 @@ export { default as javascriptIcon } from './svg/java-script.svg';
 export { default as csharpIcon } from './svg/c-sharp.svg';
 export { default as baraoIcon } from './svg/barao.svg';
 export { default as openPromotaIcon } from './svg/open-promotora.svg';
+export { default as funcaosistemas } from './svg/funcaosistemas.svg';
 
 
 

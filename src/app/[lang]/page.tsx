@@ -17,7 +17,8 @@ import {
   sqlServerIcon,
   typescriptIcon,
   baraoIcon,
-  openPromotaIcon
+  openPromotaIcon,
+  funcaosistemas
 } from "../../../public/public-modules";
 import useServerInter from '../../utils/hooks/use-server-inter';
 import LanguagesMetrics from '@/containers/languages-metrics';
@@ -69,6 +70,10 @@ export default async function Home() {
 
     if (name == "openPromotaIcon") {
       return openPromotaIcon
+    }
+
+    if (name == "funcaosistemas") {
+      return funcaosistemas
     }
   }
 

@@ -30,6 +30,18 @@
   },
   "experiences": [
     {
+      "company": "Função Sistemas",
+      "location": "São Paulo, São Paulo, Brazil · On-site",
+      "img": "funcaosistemas",
+      "roles": [
+        {
+          "title": "Desenvolvedor Full Stack Pleno",
+          "type": "Tempo integral",
+          "start": "2025-07-11"
+        }
+      ]
+    },
+    {
       "company": "Centro Universitário Barão de Mauá",
       "location": "Ribeirão Preto, São Paulo, Brasil · Presencial",
       "img": "baraoIcon",
